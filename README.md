@@ -10,6 +10,6 @@
 
 - Nexjs
 
-- TinaCMS
+- Sanity.io
 
 # judahsullivan.dev
