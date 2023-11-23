@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light mode colors */
+    --theme-bg: 240, 243, 250; /* #F0F3FA - Light blue-gray background */
+    --theme-bg-inverted: 5, 8, 15; /* #05080F - Dark background for inverted theme */
+    --theme-base: 5, 8, 15; /* #05080F - Dark text color */
+    --theme-base-inverted: 240, 243, 250; /* #F0F3FA - Light text color for inverted theme */
+    --theme-accent: 20, 140, 210; /* #148CD2 - Adjusted shade of blue */
+
+    /* New muted colors */
+
+    --theme-bg-muted: 40, 40, 40; /* #282828 - Dark gray for backgrounds in dark mode */
+
+    --theme-base-muted: 100, 100, 100; /* #646464 - Medium gray for muted text */
+    --theme-accent-muted: 150, 180, 210; /* #96B4D2 - Muted accent color for hover */
+    --theme-base-muted-inverted: 180, 180, 180; /* #B4B4B4 - Light gray for muted text in dark mode */
+
+    /* Adjusted accent color */
+    --theme-accent: 20, 140, 210; /* #148CD2 - Adjusted shade of blue */
+  }
+
+  /* for a Future Dark theme set up */
+  /* :root.dark { */
+  /*   /* Dark mode colors */
+  /*   --theme-bg: 5, 8, 15; /* #05080F - Dark background color */
+  /*   --theme-bg-inverted: 240, 243, 250; /* #F0F3FA - Light background color in dark mode */
+  /*   --theme-base: 240, 243, 250; /* #F0F3FA - Light text color in dark mode */
+  /*   --theme-base-inverted: 5, 8, 15; /* #05080F - Dark text color in dark mode */
+  /*   --theme-accent: 20, 140, 210; /* #148CD2 - Dark accent color */
+  /* } */
+  /**/
+
+  @font-face {
+    font-family: Grotesque;
+    src: url(../../public/assets/fonts/basement/BasementGrotesque-Black_v1.202.woff) format('woff');
+  }
+
+  @font-face {
+    font-family: Basement-Grotesque;
+    src: url(../../public/assets/fonts/basement/BasementGrotesque-Black_v1.202.woff2)
+      format('woff2');
+  }
+
+  html,
+  body {
+    @apply box-border font-medium  w-full min-h-[100dvh] p-0 m-0 bg-theme-base  overflow-x-hidden font-aileron;
+  }
+
+  p > span {
+    @apply text-theme-accent font-bold capitalize;
+  }
+}
