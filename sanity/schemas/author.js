@@ -6,7 +6,7 @@ export const author = {
     {
       name: 'name',
       title: 'Name',
-      type: 'string',
+      type: 'string'
     },
     {
       name: 'slug',
@@ -14,21 +14,21 @@ export const author = {
       type: 'slug',
       options: {
         source: 'name',
-        maxLength: 96,
-      },
+        maxLength: 96
+      }
     },
     {
       name: 'image',
       title: 'Image',
       type: 'image',
       options: {
-        hotspot: true,
+        hotspot: true
       },
       fields: [
         {
           name: 'alt',
           type: 'string',
-          title: 'Alternative Text',
+          title: 'Alternative Text'
         }
       ]
     },
@@ -40,16 +40,16 @@ export const author = {
         {
           title: 'Block',
           type: 'block',
-          styles: [{title: 'Normal', value: 'normal'}],
-          lists: [],
-        },
-      ],
-    },
+          styles: [{ title: 'Normal', value: 'normal' }],
+          lists: []
+        }
+      ]
+    }
   ],
   preview: {
     select: {
       title: 'name',
-      media: 'image',
-    },
-  },
-}
+      media: 'image'
+    }
+  }
+};

@@ -1,5 +1,5 @@
-import { settings } from "@/utils/data";
-import Link from "next/link";
+import { settings } from '@/utils/data';
+import Link from 'next/link';
 
 export default function Navbar({}) {
   return (

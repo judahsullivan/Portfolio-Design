@@ -23,30 +23,31 @@
     --theme-accent: 20, 140, 210; /* #148CD2 - Adjusted shade of blue */
   }
 
-  :root.dark {
-    /* Dark mode colors */
-    --theme-bg: 5, 8, 15; /* #05080F - Dark background color */
-    --theme-bg-inverted: 240, 243, 250; /* #F0F3FA - Light background color in dark mode */
-    --theme-base: 240, 243, 250; /* #F0F3FA - Light text color in dark mode */
-    --theme-base-inverted: 5, 8, 15; /* #05080F - Dark text color in dark mode */
-    --theme-accent: 20, 140, 210; /* #148CD2 - Dark accent color */
-  }
+  /* for a Future Dark theme set up */
+  /* :root.dark { */
+  /*   /* Dark mode colors */
+  /*   --theme-bg: 5, 8, 15; /* #05080F - Dark background color */
+  /*   --theme-bg-inverted: 240, 243, 250; /* #F0F3FA - Light background color in dark mode */
+  /*   --theme-base: 240, 243, 250; /* #F0F3FA - Light text color in dark mode */
+  /*   --theme-base-inverted: 5, 8, 15; /* #05080F - Dark text color in dark mode */
+  /*   --theme-accent: 20, 140, 210; /* #148CD2 - Dark accent color */
+  /* } */
+  /**/
 
   @font-face {
     font-family: Grotesque;
-    src: url(../../public/assets/fonts/basement/BasementGrotesque-Black_v1.202.woff)
-      format("woff");
+    src: url(../../public/assets/fonts/basement/BasementGrotesque-Black_v1.202.woff) format('woff');
   }
 
   @font-face {
     font-family: Basement-Grotesque;
     src: url(../../public/assets/fonts/basement/BasementGrotesque-Black_v1.202.woff2)
-      format("woff2");
+      format('woff2');
   }
 
   html,
   body {
-    @apply box-border  w-full min-h-[100dvh] p-0 m-0   overflow-x-hidden font-aileron;
+    @apply box-border font-medium  w-full min-h-[100dvh] p-0 m-0 bg-theme-base  overflow-x-hidden font-aileron;
   }
 
   p > span {

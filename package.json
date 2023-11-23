@@ -23,10 +23,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.20.0",
     "@studio-freight/react-lenis": "^0.0.38",
     "@tailwindcss/typography": "^0.5.10",
+    "emailjs": "^4.0.3",
     "framer-motion": "^10.16.5",
     "next": "^14.0.3",
     "next-sanity": "^6.0.5",

@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect } from 'react';
 
 export const useDimensions = (ref) => {
   const dimensions = useRef({ width: 0, height: 0 });

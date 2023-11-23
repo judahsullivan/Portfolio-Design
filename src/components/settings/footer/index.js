@@ -1,15 +1,15 @@
-import Image from "next/image";
-import HeroImage from "@/public/assets/images/hero.webp";
-import Link from "next/link";
-import { useRef } from "react";
-import { useScroll, useTransform, motion } from "framer-motion";
-import { settings } from "@/utils/data";
+import Image from 'next/image';
+import HeroImage from '@/public/assets/images/hero.webp';
+import Link from 'next/link';
+import { useRef } from 'react';
+import { useScroll, useTransform, motion } from 'framer-motion';
+import { settings } from '@/utils/data';
 
 export default function Footer() {
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
-    offset: ["start end", "end end"],
+    offset: ['start end', 'end end']
   });
   const x = useTransform(scrollYProgress, [0, 1], [0, 200]);
   // const y = useTransform(scrollYProgress, [0, 1], [-100, 0]);
@@ -17,11 +17,12 @@ export default function Footer() {
   return (
     <motion.footer
       ref={container}
-      className="z-0 w-full bg-theme-muted flex flex-col relative  text-theme-base "
+      className=" w-full min-h-[100dvh]
+      bg-theme-muted flex flex-col relative justify-center  text-theme-base "
     >
       {settings.map((footer, index) => (
-        <div key={index} className="space-y-10 max-w-6xl w-full mx-auto">
-          <div className="flex-col flex h-full w-full justify-between ">
+        <div key={index} className="space-y-20 max-w-5xl w-full mx-auto">
+          <div className="flex-col flex gap-10 h-full w-full justify-between ">
             <div className="h-full">
               <h1 className="px-2 text-3xl w-full mt-10 text-theme-inverted font-basement ">
                 Get In Touch
@@ -83,10 +84,7 @@ export default function Footer() {
                     priority
                   />
                 </Link>
-                <h2 className="text-2xl text-theme-accent font-bold">
-                  {" "}
-                  Newsletter coming soon!
-                </h2>
+                <h2 className="text-2xl text-theme-accent font-bold"> Newsletter coming soon!</h2>
                 <div className="mt-2 flex gap-2 max-w-md">
                   <label htmlFor="email-address" className="sr-only">
                     Email address
@@ -114,11 +112,10 @@ export default function Footer() {
           <div className="p-5  text-theme-muted-inverted">
             <hr className="  border-theme-muted border sm:mx-auto" />
 
-            <div className="flex w-full h-full flex-col md:flex-row items-center sm:justify-between">
+            <div className="  flex w-full h-full flex-col md:flex-row items-center sm:justify-between">
               <span className="text-sm  sm:text-center ">
-                © 2023{" "}
-                <span className="text-theme-accent">Judah Sullivan™</span>. All
-                Rights Reserved.
+                © 2023 <span className="text-theme-accent">Judah Sullivan™</span>. All Rights
+                Reserved.
               </span>
               <div className="flex mt-2  space-x-5 sm:justify-center">
                 {footer.externalLinks?.links?.map((link, index) => (
