@@ -4,12 +4,10 @@
 
 ### Build with
 
-- Framer-Motion
+-[FramerMotion](https://framer.com/motion)
 
-- Tailwindcss
+- [TailwindCss](https://tailwindcss.com)
 
-- Nexjs
+- [NextJS](https://nextjs.org)
 
-- Sanity.io
-
-# judahsullivan.dev
+-[SanityCMS](https://sanity.io)
