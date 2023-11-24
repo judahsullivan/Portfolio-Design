@@ -9,6 +9,11 @@ export const post = {
       type: 'string'
     },
     {
+      name: 'description',
+      title: 'Description',
+      type: 'text'
+    },
+    {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
@@ -44,6 +49,18 @@ export const post = {
       type: 'array',
       of: [{ type: 'reference', to: { type: 'category' } }]
     },
+    {
+      name: 'tags',
+      title: 'Tags',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'tags' } }]
+    },
+    {
+      name: 'featured',
+      title: 'Featured',
+      type: 'boolean'
+    },
+
     {
       name: 'publishedAt',
       title: 'Published at',
