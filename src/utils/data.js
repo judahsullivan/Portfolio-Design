@@ -46,8 +46,8 @@ export const settings = [
       sectionName: 'Site',
       links: [
         { key: 'about', name: 'About', url: '/about' },
-        // { key: "blog", name: "Blog", url: "/blog" },
-        // { key: "projects", name: "Projects", url: "/projects" },
+        { key: 'blog', name: 'Blog', url: '/blog' },
+        { key: 'projects', name: 'Projects', url: '/projects' },
         { key: 'contact', name: 'Contact Me', url: '/contact' }
       ]
     },

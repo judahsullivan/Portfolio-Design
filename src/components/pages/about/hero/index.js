@@ -4,7 +4,7 @@ import About from '@/public/assets/images/about.jpg';
 
 export default function AboutHero() {
   return (
-    <div className="min-h-screen w-full flex flex-col items-center gap-y-12 py-10 justify-center ">
+    <div className="min-h-[100dvh] pt-[5rem] w-full flex flex-col items-center gap-y-12 justify-center ">
       <h1 className=" text-4xl lg:text-6xl font-basement">
         A Engineer, Thinker and Father with a desire to change the world!
       </h1>

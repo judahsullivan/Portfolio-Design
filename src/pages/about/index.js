@@ -9,7 +9,7 @@ export default function Aboout() {
     <PageLayout title="About" description="" keywords="">
       <AboutHero />
       <Skills />
-      <TechStack />
+      {/* <TechStack /> */}
     </PageLayout>
   );
 }
