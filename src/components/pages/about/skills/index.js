@@ -1,73 +1,27 @@
+import { skills } from '@/utils/data';
+
 export default function Skills() {
   return (
     <section className=" min-h-screen flex flex-col justify-center items-center w-full  dark:bg-gray-800 dark:text-gray-100">
       <h4 className="text-lg font-bold font-basement text-theme-muted place-self-start">
         What do I bring?
       </h4>
-      <div className=" p-4 my-6 space-y-2 text-center">
-        <p className="dark:text-gray-400">Libero minima optio qui</p>
-      </div>
-      <div className="container mx-auto grid justify-center gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <div className="flex flex-col items-center p-4">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            className="w-8 h-8 dark:text-violet-400"
-          >
-            <path
-              fillRule="evenodd"
-              d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
-              clipRule="evenodd"
-            ></path>
-          </svg>
-          <h3 className="my-3 text-3xl font-semibold">Product</h3>
-          <div className="space-y-1 leadi">
-            <p>Similique quas ea veniam</p>
-            <p>Tempore quasi porro</p>
-            <p>Blanditiis aut mollitia ex</p>
+      <div className=" p-4 my-6 space-y-2 text-center"></div>
+      <div className="w-full grid justify-center gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {skills.map((skill, index) => (
+          <div key={index} className=" w-[300px] h-[300px] items-center flex flex-col  p-4">
+            <div>
+              <p>{skill.number}</p>
+            </div>
+            <hr className="border-theme-muted w-full" />
+            <div>
+              <h3 className="my-3 text-2xl font-semibold">{skill.title}</h3>
+              <p className=" text-md p-2 tracking-wide font-thin text-theme-muted leading-loose">
+                {skill.description}
+              </p>
+            </div>
           </div>
-        </div>
-        <div className="flex flex-col items-center p-4">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            className="w-8 h-8 dark:text-violet-400"
-          >
-            <path
-              fillRule="evenodd"
-              d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
-              clipRule="evenodd"
-            ></path>
-          </svg>
-          <h3 className="my-3 text-3xl font-semibold">Product</h3>
-          <div className="space-y-1 leadi">
-            <p>Similique quas ea veniam</p>
-            <p>Tempore quasi porro</p>
-            <p>Blanditiis aut mollitia ex</p>
-          </div>
-        </div>
-        <div className="flex flex-col items-center p-4">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            className="w-8 h-8 dark:text-violet-400"
-          >
-            <path
-              fillRule="evenodd"
-              d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
-              clipRule="evenodd"
-            ></path>
-          </svg>
-          <h3 className="my-3 text-3xl font-semibold">Product</h3>
-          <div className="space-y-1 leadi">
-            <p>Similique quas ea veniam</p>
-            <p>Tempore quasi porro</p>
-            <p>Blanditiis aut mollitia ex</p>
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );

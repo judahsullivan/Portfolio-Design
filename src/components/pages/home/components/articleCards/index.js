@@ -2,50 +2,42 @@ import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRef } from 'react';
-import { FiArrowDownRight, FiArrowRight } from 'react-icons/fi';
+import { FiArrowRight } from 'react-icons/fi';
 
-const MdCard = () => {
+const MdCard = ({ title, publishedAt, mainImage, category, alt }) => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:hidden items-center justify-center gap-4">
-      <Link href="">
+    <article className="grid grid-rows-[300px_auto] md:hidden min-h-full group">
+      <a className="relative w-full h-full    bg-theme-muted rounded-[5px]" href={''}>
         <Image
-          src="https://images.unsplash.com/photo-1682686581776-b6ebee7c150e?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt=""
-          width={500}
-          height={400}
-          className="w-full object-cover rounded-md"
+          src={mainImage}
+          width={600}
+          height={200}
+          className="h-full w-full  object-contain py-10 px-4 hover:scale-[101%] transition-all duration-200 rounded-[2px]"
+          alt={alt}
         />
-        <div className="flex-col gap-4 flex">
-          <h4 className="text-4xl font-basement">Title</h4>
-          <hr className="w-full border-black" />
-          <div className="flex text-theme-muted justify-between">
-            <p>Category</p>
-            <p>2023</p>
+      </a>
+
+      <div className="flex justify-between flex-col gap-4 md:gap-0 py-6 pl-1">
+        <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-2">
+            <a className="text-2xl font-semibold -tracking-wider" href={``}>
+              {title}
+            </a>
+          </div>
+          <hr className="w-full border-theme-muted" />
+          <div className="flex w-full justify-between items-center">
+            <p className="overflow-hidden line-clamp-3 text-gray-700 dark:text-white mb-5 font-[400] md:pr-[15%]">
+              {category}
+            </p>
+            <p>{publishedAt}</p>
           </div>
         </div>
-      </Link>
-      <Link href="">
-        <Image
-          src="https://images.unsplash.com/photo-1682686581776-b6ebee7c150e?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt=""
-          width={500}
-          height={400}
-          className="w-full object-cover rounded-md"
-        />
-        <div className="flex-col gap-4 flex">
-          <h4 className="text-4xl font-basement">Title</h4>
-          <hr className="w-full border-black" />
-          <div className="flex text-theme-muted justify-between">
-            <p>Category</p>
-            <p>2023</p>
-          </div>
-        </div>
-      </Link>
-    </div>
+      </div>
+    </article>
   );
 };
 
-const DtCard = ({ heading, imgSrc, subheading, href }) => {
+const DtCard = ({ title, alt, publishedAt, mainImage, href }) => {
   const ref = useRef(null);
 
   const x = useMotionValue(0);
@@ -74,7 +66,7 @@ const DtCard = ({ heading, imgSrc, subheading, href }) => {
   };
 
   return (
-    <div className="hidden lg:flex max-w-4xl mx-auto flex-col ">
+    <div className="hidden md:flex max-w-4xl mx-auto flex-col ">
       <motion.a
         href={href}
         ref={ref}
@@ -85,7 +77,7 @@ const DtCard = ({ heading, imgSrc, subheading, href }) => {
       >
         <div>
           <motion.span className="relative z-10 font-aileron block text-5xl font-extrabold text-theme-base transition-colors duration-500 group-hover:text-theme-accent ">
-            <motion.span className="inline-block">Title</motion.span>
+            <motion.span className="inline-block">{title}</motion.span>
           </motion.span>
         </div>
 
@@ -101,11 +93,9 @@ const DtCard = ({ heading, imgSrc, subheading, href }) => {
             whileHover: { scale: 1, rotate: '12.5deg' }
           }}
           transition={{ type: 'spring' }}
-          src={
-            'https://images.unsplash.com/photo-1682685797168-613fd0cae41d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-          }
-          className="absolute z-0 h-24 w-32 rounded-lg object-cover md:h-48 md:w-64"
-          alt={`Image representing a link for ${heading}`}
+          src={mainImage}
+          className="absolute z-0 h-[400px] w-[400px] rounded-lg object-contain bg-theme-muted p-5 "
+          alt={alt}
         />
 
         <motion.div
