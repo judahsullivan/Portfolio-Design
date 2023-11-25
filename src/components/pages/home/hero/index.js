@@ -31,9 +31,6 @@ export default function Hero({ heading, description, roles }) {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-2 right-2  ">
-        <MouseIcon />
-      </div>
     </div>
   );
 }

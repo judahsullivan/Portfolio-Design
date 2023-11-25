@@ -6,8 +6,8 @@ import { FiArrowRight } from 'react-icons/fi';
 
 const MdCard = ({ title, publishedAt, mainImage, category, alt }) => {
   return (
-    <article className="grid grid-rows-[300px_auto] md:hidden min-h-full group">
-      <a className="relative w-full h-full    bg-theme-muted rounded-[5px]" href={''}>
+    <div className=" flex flex-col lg:hidden">
+      <a className=" w-full h-full  bg-theme-muted rounded-[5px]" href={''}>
         <Image
           src={mainImage}
           width={600}
@@ -33,7 +33,7 @@ const MdCard = ({ title, publishedAt, mainImage, category, alt }) => {
           </div>
         </div>
       </div>
-    </article>
+    </div>
   );
 };
 
@@ -66,7 +66,7 @@ const DtCard = ({ title, alt, publishedAt, mainImage, href }) => {
   };
 
   return (
-    <div className="hidden md:flex max-w-4xl mx-auto flex-col ">
+    <div className="hidden lg:flex max-w-4xl mx-auto lg:flex-col ">
       <motion.a
         href={href}
         ref={ref}
@@ -94,7 +94,7 @@ const DtCard = ({ title, alt, publishedAt, mainImage, href }) => {
           }}
           transition={{ type: 'spring' }}
           src={mainImage}
-          className="absolute z-0 h-[400px] w-[400px] rounded-lg object-contain bg-theme-muted p-5 "
+          className="absolute z-0 h-[250px] w-[250px] rounded-lg object-contain bg-theme-muted p-5 "
           alt={alt}
         />
 
