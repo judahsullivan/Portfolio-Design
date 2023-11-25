@@ -31,6 +31,7 @@ export async function getStaticProps() {
     props: {
       featuredPost,
       recentProjects
-    }
+    },
+    revalidate: 10
   };
 }
