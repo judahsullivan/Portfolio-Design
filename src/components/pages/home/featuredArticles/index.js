@@ -8,7 +8,7 @@ export default function FeaturedArtices({ articles }) {
       <h4 className="font-basement text-theme-muted text-lg tracking-tight font-extrabold">
         Featured Articles
       </h4>
-      <div className="w-full">
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-2 lg:block">
         {articles.map((article, index) => (
           <Fragment key={index}>
             <MdCard
