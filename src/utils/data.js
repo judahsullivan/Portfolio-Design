@@ -48,7 +48,7 @@ export const settings = [
         { key: 'about', name: 'About', url: '/about' },
         { key: 'blog', name: 'Blog', url: '/blog' },
         { key: 'projects', name: 'Projects', url: '/projects' },
-        { key: 'contact', name: 'Contact Me', url: '/contact' }
+        { key: 'contact', name: 'Contact', url: '/contact' }
       ]
     },
     externalLinks: {

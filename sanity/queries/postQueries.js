@@ -16,7 +16,7 @@ const postFields = groq`
     tags[]->{
       title
     },
-    categories[]->{
+    "categories": categories->{
       title,
       description
     },
@@ -26,7 +26,7 @@ const postFields = groq`
 `;
 
 export const featuredArticlesQuery = groq`
-*[_type == "post"] | order(publishedAt) | order(featured)[0..4]{
+*[_type == "post"] | order(publishedAt desc) | order(featured)[0..4]{
 ${postFields}
 }
 `;

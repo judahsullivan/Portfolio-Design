@@ -8,23 +8,50 @@ export default function RecentProjects({ projects }) {
       <h4 className="font-basement text-theme-muted text-lg tracking-tight font-extrabold">
         Recent Projects
       </h4>
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-2 lg:block">
-        {projects.map((project, index) => (
-          <Fragment key={index}>
-            <MdCard
-              title={project.title}
-              publishedAt={project._publishedAt}
-              mainImage={project.mainImage.asset.url}
-              alt={project.mainImage.alt}
-            />
-            <DtCard
-              title={project.title}
-              publishedAt={project.publishedAt}
-              mainImage={project.mainImage.asset.url}
-              alt={project.mainImage.alt}
-            />
-          </Fragment>
-        ))}
+      <div className="pt-[4rem]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          {projects.map((project, index) => (
+            <Fragment key={index}>
+              <MdCard
+                title={project.title}
+                publishedAt={project.publishedAt}
+                mainImage={project.mainImage.asset.url}
+                alt={project.mainImage.alt}
+                categories={project.projectCategory}
+              />
+            </Fragment>
+          ))}
+        </div>
+        <div className="hidden w-full relative lg:block mx-auto ">
+          <table className="text-left  rtl:text-right table-auto  w-full mt-[4rem]">
+            <thead>
+              <tr className="font-basement">
+                <th scope="col" class="px-6 py-3">
+                  Title
+                </th>
+                <th scope="col" class="px-6 py-3">
+                  Categories
+                </th>
+                <th scope="col" class="px-6 py-3">
+                  Date
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {projects.map((project, index) => (
+                <Fragment key={index}>
+                  <DtCard
+                    title={project.title}
+                    publishedAt={project.publishedAt}
+                    mainImage={project.mainImage.asset.url}
+                    alt={project.mainImage.alt}
+                    categories={project.projectCategory} // Pass projectCategories to MdCard
+                  />
+                </Fragment>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
 
       {/* <h1 className="text-5xl text-center ">Project Case Studies Coming Soon!</h1> */}

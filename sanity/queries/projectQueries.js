@@ -12,10 +12,10 @@ url
 },
 publishedAt,
 body,
-projectTags[]->{
+"projectTags": projectTags[]->{
 title
 },
-projectCategories[]->{
+'projectCategory': projectCategory->{
 title,
 description
 },
@@ -25,12 +25,12 @@ name,
 `;
 
 export const recentProjectsQuery = groq`
-*[_type == "project"] | order(publishedAt)[0..4]{
+*[_type == "project"] | order(publishedAt desc)[0..4]{
 ${projectFields}
 }
 `;
 
-export const ArticleQuery = groq`
+export const ProjectCaseQueries = groq`
 *[_type == "project"] | order(publishedAt desc) {
   ${projectFields}
 }`;

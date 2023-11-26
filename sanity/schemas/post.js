@@ -46,8 +46,8 @@ export const post = {
     {
       name: 'categories',
       title: 'Categories',
-      type: 'array',
-      of: [{ type: 'reference', to: { type: 'category' } }]
+      type: 'reference',
+      to: [{ type: 'category' }]
     },
     {
       name: 'tags',
@@ -64,7 +64,20 @@ export const post = {
     {
       name: 'publishedAt',
       title: 'Published at',
-      type: 'datetime'
+      type: 'datetime',
+      options: {
+        dateFormat: 'MM-YYYY' // Set the desired format for display
+      },
+      initialValue: () => {
+        const currentDate = new Date();
+        const year = currentDate.getFullYear();
+        const month = `${currentDate.getMonth() + 1}`.padStart(2, '0'); // Months are zero-indexed, so add 1
+
+        // Format the date to YYYY-MM
+        const formattedDate = `${year}-${month}`;
+
+        return formattedDate;
+      }
     },
     {
       name: 'body',

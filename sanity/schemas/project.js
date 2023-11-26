@@ -41,20 +41,24 @@ export const project = {
     {
       name: 'projectCategory',
       title: 'Project Categories',
-      type: 'array',
-      of: [{ type: 'reference', to: { type: 'projectCategory' } }]
+      type: 'reference',
+      to: [{ type: 'projectCategory' }]
     },
     {
       name: 'projectTags',
       title: 'Project Tags',
       type: 'array',
-      of: [{ type: 'reference', to: { type: 'projectTags' } }]
+      of: [{ type: 'reference', to: { type: 'tags' } }]
     },
 
     {
       name: 'publishedAt',
       title: 'Published at',
-      type: 'datetime'
+      type: 'datetime',
+      options: {
+        dateFormate: 'YYYY-MM',
+        calenderTodayLabel: 'today'
+      }
     },
     {
       name: 'body',

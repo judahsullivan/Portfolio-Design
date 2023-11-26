@@ -8,27 +8,51 @@ export default function FeaturedArtices({ articles }) {
       <h4 className="font-basement text-theme-muted text-lg tracking-tight font-extrabold">
         Featured Articles
       </h4>
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-2 lg:block">
-        {articles.map((article, index) => (
-          <Fragment key={index}>
-            <MdCard
-              title={article.title}
-              publishedAt={article._publishedAt}
-              mainImage={article.mainImage.asset.url}
-              alt={article.mainImage.alt}
-              category={article.categories.title}
-            />
-            <DtCard
-              title={article.title}
-              publishedAt={article.publishedAt}
-              mainImage={article.mainImage.asset.url}
-              alt={article.mainImage.alt}
-            />
-          </Fragment>
-        ))}
+      <div className="pt-[4rem]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          {articles.map((article, index) => (
+            <Fragment key={index}>
+              <MdCard
+                title={article.title}
+                publishedAt={article.publishedAt}
+                mainImage={article.mainImage.asset.url}
+                alt={article.mainImage.alt}
+                categories={article.categories}
+              />
+            </Fragment>
+          ))}
+        </div>
+        <div className="hidden w-full relative lg:block mx-auto ">
+          <table className="text-left  rtl:text-right table-auto  w-full mt-[4rem]">
+            <thead>
+              <tr className="font-basement">
+                <th scope="col" class="px-6 py-3">
+                  Title
+                </th>
+                <th scope="col" class="px-6 py-3">
+                  Categories
+                </th>
+                <th scope="col" class="px-6 py-3">
+                  Date
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {articles.map((article, index) => (
+                <Fragment key={index}>
+                  <DtCard
+                    title={article.title}
+                    publishedAt={article.publishedAt}
+                    mainImage={article.mainImage.asset.url}
+                    alt={article.mainImage.alt}
+                    categories={article.categories}
+                  />
+                </Fragment>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
-
-      {/* <h1 className="text-5xl text-center ">Blog Articles Coming Soon!</h1> */}
 
       <button className="inline-flex font-thin items-center gap-2 place-self-end rounded-full hover:underline hover:text-theme-accent transition-colors duration-150 ease-linear underline-offset-4   ">
         view all Articles

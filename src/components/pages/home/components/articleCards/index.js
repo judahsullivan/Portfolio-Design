@@ -1,10 +1,10 @@
+import PostDate from '@/components/common/postDate';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRef } from 'react';
-import { FiArrowRight } from 'react-icons/fi';
 
-const MdCard = ({ title, publishedAt, mainImage, category, alt }) => {
+const MdCard = ({ title, publishedAt, mainImage, categories, alt }) => {
   return (
     <div className=" flex flex-col lg:hidden">
       <a className=" w-full h-full  bg-theme-muted rounded-[5px]" href={''}>
@@ -21,23 +21,22 @@ const MdCard = ({ title, publishedAt, mainImage, category, alt }) => {
         <div className="flex flex-col gap-3">
           <div className="flex flex-col gap-2">
             <a className="text-2xl font-semibold -tracking-wider" href={``}>
-              {title}
+              <h4>{title}</h4>
             </a>
           </div>
           <hr className="w-full border-theme-muted" />
-          <div className="flex w-full justify-between items-center">
-            <p className="overflow-hidden line-clamp-3 text-gray-700 dark:text-white mb-5 font-[400] md:pr-[15%]">
-              {category}
+          <div className="flex px-2 w-full justify-between items-center">
+            <p>{categories && <span className="text-lg">{categories.title}</span>}</p>
+            <p>
+              <PostDate dateString={publishedAt} />
             </p>
-            <p>{publishedAt}</p>
           </div>
         </div>
       </div>
     </div>
   );
 };
-
-const DtCard = ({ title, alt, publishedAt, mainImage, href }) => {
+const DtCard = ({ title, publishedAt, mainImage, categories, alt }) => {
   const ref = useRef(null);
 
   const x = useMotionValue(0);
@@ -50,13 +49,13 @@ const DtCard = ({ title, alt, publishedAt, mainImage, href }) => {
   const left = useTransform(mouseXSpring, [0.5, -0.5], ['60%', '70%']);
 
   const handleMouseMove = (e) => {
-    const rect = ref.current.getBoundingClientRect();
+    const rect = ref.current?.getBoundingClientRect();
 
-    const width = rect.width;
-    const height = rect.height;
+    const width = rect?.width;
+    const height = rect?.height;
 
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
+    const mouseX = e.clientX - rect?.left;
+    const mouseY = e.clientY - rect?.top;
 
     const xPct = mouseX / width - 0.5;
     const yPct = mouseY / height - 0.5;
@@ -66,56 +65,41 @@ const DtCard = ({ title, alt, publishedAt, mainImage, href }) => {
   };
 
   return (
-    <div className="hidden lg:flex max-w-4xl mx-auto lg:flex-col ">
-      <motion.a
-        href={href}
-        ref={ref}
-        onMouseMove={handleMouseMove}
-        initial="initial"
-        whileHover="whileHover"
-        className="group relative flex items-center justify-between border-b-2 border-neutral-900  transition-colors duration-500 hover:border-neutral-900 md:py-8"
-      >
-        <div>
-          <motion.span className="relative z-10 font-aileron block text-5xl font-extrabold text-theme-base transition-colors duration-500 group-hover:text-theme-accent ">
-            <motion.span className="inline-block">{title}</motion.span>
-          </motion.span>
-        </div>
-
+    <motion.tr
+      className="relative overscroll-y-none h-full"
+      onMouseMove={handleMouseMove}
+      ref={ref}
+      initial="initial"
+      whileHover="whileHover"
+    >
+      <th scope="row" className="px-6 py-4 ">
+        <motion.span className=" z-10 font-aileron block text-5xl font-semibold text-theme-base transition-colors duration-500 group-hover:text-theme-accent ">
+          <motion.span className="inline-block">{title}</motion.span>
+        </motion.span>
         <motion.img
           style={{
             top,
             left,
-            translateX: '-50%',
+            translateX: '-60%',
             translateY: '-50%'
           }}
           variants={{
-            initial: { scale: 0, rotate: '-12.5deg' },
-            whileHover: { scale: 1, rotate: '12.5deg' }
+            initial: { scale: 0, rotate: '0' },
+            whileHover: { scale: 1, rotate: '0' }
           }}
           transition={{ type: 'spring' }}
           src={mainImage}
-          className="absolute z-0 h-[250px] w-[250px] rounded-lg object-contain bg-theme-muted p-5 "
+          className=" w-[300px] h-[200px] z-0 absolute rounded-lg object-cover bg-theme-muted p-5"
           alt={alt}
         />
-
-        <motion.div
-          variants={{
-            initial: {
-              x: '25%',
-              opacity: 0
-            },
-            whileHover: {
-              x: '0%',
-              opacity: 1
-            }
-          }}
-          transition={{ type: 'spring' }}
-          className="relative z-10 p-4"
-        >
-          <FiArrowRight className="text-5xl text-them-accent" />
-        </motion.div>
-      </motion.a>
-    </div>
+      </th>
+      <td className="px-6 py-4 ">
+        {categories && <span className="text-lg">{categories.title}</span>}
+      </td>
+      <td className="px-6 py-4 ">
+        <PostDate dateString={publishedAt} />
+      </td>
+    </motion.tr>
   );
 };
 

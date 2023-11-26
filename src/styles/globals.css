@@ -47,10 +47,16 @@
 
   html,
   body {
-    @apply box-border font-medium  w-full min-h-[100dvh] p-0 m-0 bg-theme-base  overflow-x-hidden font-aileron;
+    @apply box-border font-thin text-theme-muted w-full min-h-[100dvh] p-0 m-0 bg-theme-base  overflow-x-hidden font-aileron;
   }
 
-  p > span {
-    @apply text-theme-accent font-bold capitalize;
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply text-theme-base;
+  }
+  p {
+    @apply text-lg text-theme-muted;
   }
 }
