@@ -16,6 +16,7 @@ const postFields = groq`
     tags[]->{
       title
     },
+"slug" : slug.current,
     "categories": categories->{
       title,
       description

@@ -34,13 +34,14 @@ export default function BlogIndex({ articles }) {
                   mainImage={article.mainImage.asset.url}
                   alt={article.mainImage.alt}
                   categories={article.categories}
+                  slug={`/blog/${article.slug}`}
                 />
               </Fragment>
             ))}
           </div>
           <div className="hidden w-full relative lg:block mx-auto ">
-            <table className="text-left  rtl:text-right table-auto  w-full mt-[4rem]">
-              <thead>
+            <table className="text-left  rtl:text-right table-auto   w-full mt-[4rem]">
+              <thead className=" bg-theme-muted rounded-md border text-theme-muted-inverted">
                 <tr className="font-basement">
                   <th scope="col" class="px-6 py-3">
                     Title
@@ -61,6 +62,7 @@ export default function BlogIndex({ articles }) {
                       publishedAt={article.publishedAt}
                       mainImage={article.mainImage.asset.url}
                       alt={article.mainImage.alt}
+                      slug={`/blog/${article.slug}`}
                       categories={article.categories}
                     />
                   </Fragment>

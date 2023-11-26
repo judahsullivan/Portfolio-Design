@@ -16,10 +16,10 @@ export const RichTextComponent = {
     number: ({ children }) => <ol className="mt-lg list-decimal">{children}</ol>
   },
   block: {
-    h1: ({ children }) => <h1 className="py-10 text-5xl font-bold">{children}</h1>,
-    h2: ({ children }) => <h1 className="py-10 text-4xl font-bold">{children}</h1>,
-    h3: ({ children }) => <h1 className="py-10 text-3xl font-bold">{children}</h1>,
-    h4: ({ children }) => <h1 className="py-10 text-2xl font-bold">{children}</h1>,
+    h1: ({ children }) => <h1 className="py-10 text-5xl font-basement ">{children}</h1>,
+    h2: ({ children }) => <h2 className="py-10 text-4xl font-basement ">{children}</h2>,
+    h3: ({ children }) => <h3 className="py-10 text-3xl font-bold">{children}</h3>,
+    h4: ({ children }) => <h4 className="py-10 text-2xl font-bold">{children}</h4>,
 
     blockquote: ({ children }) => (
       <blockquote className="my-5 border-l-4 border-l-emphasize py-5 pl-5">{children}</blockquote>

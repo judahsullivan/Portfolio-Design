@@ -4,10 +4,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRef } from 'react';
 
-const MdCard = ({ title, publishedAt, mainImage, categories, alt }) => {
+const MdCard = ({ slug, title, publishedAt, mainImage, categories, alt }) => {
   return (
-    <div className=" flex flex-col lg:hidden">
-      <a className=" w-full h-full  bg-theme-muted rounded-[5px]" href={''}>
+    <Link href={`${slug}`} className=" flex flex-col lg:hidden">
+      <div className=" w-full h-full  bg-theme-muted rounded-[5px]">
         <Image
           src={mainImage}
           width={600}
@@ -15,14 +15,14 @@ const MdCard = ({ title, publishedAt, mainImage, categories, alt }) => {
           className="h-full w-full  object-contain py-10 px-4 hover:scale-[101%] transition-all duration-200 rounded-[2px]"
           alt={alt}
         />
-      </a>
+      </div>
 
       <div className="flex justify-between flex-col gap-4 md:gap-0 py-6 pl-1">
         <div className="flex flex-col gap-3">
           <div className="flex flex-col gap-2">
-            <a className="text-2xl font-semibold -tracking-wider" href={``}>
+            <div className="text-2xl font-semibold -tracking-wider">
               <h4>{title}</h4>
-            </a>
+            </div>
           </div>
           <hr className="w-full border-theme-muted" />
           <div className="flex px-2 w-full justify-between items-center">
@@ -33,10 +33,10 @@ const MdCard = ({ title, publishedAt, mainImage, categories, alt }) => {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
-const DtCard = ({ title, publishedAt, mainImage, categories, alt }) => {
+const DtCard = ({ title, slug, publishedAt, mainImage, categories, alt }) => {
   const ref = useRef(null);
 
   const x = useMotionValue(0);
@@ -66,38 +66,44 @@ const DtCard = ({ title, publishedAt, mainImage, categories, alt }) => {
 
   return (
     <motion.tr
-      className="relative overscroll-y-none h-full"
+      className="relative overscroll-y-none border-b   border-theme-muted h-[200px]"
       onMouseMove={handleMouseMove}
       ref={ref}
       initial="initial"
       whileHover="whileHover"
     >
       <th scope="row" className="px-6 py-4 ">
-        <motion.span className=" z-10 font-aileron block text-5xl font-semibold text-theme-base transition-colors duration-500 group-hover:text-theme-accent ">
-          <motion.span className="inline-block">{title}</motion.span>
-        </motion.span>
-        <motion.img
-          style={{
-            top,
-            left,
-            translateX: '-60%',
-            translateY: '-50%'
-          }}
-          variants={{
-            initial: { scale: 0, rotate: '0' },
-            whileHover: { scale: 1, rotate: '0' }
-          }}
-          transition={{ type: 'spring' }}
-          src={mainImage}
-          className=" w-[300px] h-[200px] z-0 absolute rounded-lg object-cover bg-theme-muted p-5"
-          alt={alt}
-        />
+        <Link href={`${slug}`}>
+          <motion.span className=" z-10 font-aileron block text-5xl font-semibold text-theme-base transition-colors duration-500 group-hover:text-theme-accent ">
+            <motion.span className="inline-block">{title}</motion.span>
+          </motion.span>
+          <motion.img
+            style={{
+              top,
+              left,
+              translateX: '-60%',
+              translateY: '-50%'
+            }}
+            variants={{
+              initial: { scale: 0, rotate: '0' },
+              whileHover: { scale: 1, rotate: '0' }
+            }}
+            transition={{ type: 'spring' }}
+            src={mainImage}
+            className=" w-[300px] h-[200px] z-0 absolute rounded-lg object-cover bg-theme-muted p-5"
+            alt={alt}
+          />
+        </Link>
       </th>
       <td className="px-6 py-4 ">
-        {categories && <span className="text-lg">{categories.title}</span>}
+        <Link href={`${slug}`}>
+          {categories && <span className="text-lg">{categories.title}</span>}
+        </Link>
       </td>
       <td className="px-6 py-4 ">
-        <PostDate dateString={publishedAt} />
+        <Link href={`${slug}`}>
+          <PostDate dateString={publishedAt} />
+        </Link>
       </td>
     </motion.tr>
   );

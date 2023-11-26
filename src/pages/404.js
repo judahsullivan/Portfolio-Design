@@ -8,9 +8,7 @@ export default function NotFound() {
         'The Page your looking for isnt found but you return to Home by pushing the button'
       }
     >
-      <div className="min-h-screen w-full">
-
-      </div>
+      <div className="min-h-screen w-full"></div>
     </PageLayout>
   );
 }
