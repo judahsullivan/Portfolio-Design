@@ -1,4 +1,5 @@
 import AppLayout from '@/components/layouts/appLayout';
+import { Analytics } from '@vercel/analytics/react';
 import { useRouter } from 'next/router';
 import '@/styles/globals.css';
 import { Fragment } from 'react';
@@ -9,10 +10,14 @@ export default function App({ Component, pageProps }) {
   return (
     <Fragment>
       {isStudioPage ? (
-        <Component {...pageProps} />
+        <Fragment>
+          <Component {...pageProps} />
+          <Analytics />
+        </Fragment>
       ) : (
         <AppLayout>
           <Component {...pageProps} />
+          <Analytics />
         </AppLayout>
       )}
     </Fragment>
