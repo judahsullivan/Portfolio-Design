@@ -26,7 +26,11 @@ const MdCard = ({ slug, title, publishedAt, mainImage, categories, alt }) => {
           </div>
           <hr className="w-full border-theme-muted" />
           <div className="flex px-2 w-full justify-between items-center">
-            <p>{categories && <span className="text-lg">{categories.title}</span>}</p>
+            <p>
+              {categories && (
+                <span className="text-theme-base unset text-lg">{categories.title}</span>
+              )}
+            </p>
             <p>
               <PostDate dateString={publishedAt} />
             </p>
@@ -97,7 +101,7 @@ const DtCard = ({ title, slug, publishedAt, mainImage, categories, alt }) => {
       </th>
       <td className="px-6 py-4 ">
         <Link href={`${slug}`}>
-          {categories && <span className="text-lg">{categories.title}</span>}
+          {categories && <span className="text-lg text-theme-base">{categories.title}</span>}
         </Link>
       </td>
       <td className="px-6 py-4 ">
