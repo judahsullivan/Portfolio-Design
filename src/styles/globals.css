@@ -59,4 +59,7 @@
   p {
     @apply text-lg text-theme-muted;
   }
+  p > span {
+    @apply text-theme-accent capitalize font-bold;
+  }
 }

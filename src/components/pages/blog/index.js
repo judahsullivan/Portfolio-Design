@@ -5,6 +5,24 @@ import { FaList } from 'react-icons/fa';
 import { useResize } from '@/utils/useResize';
 
 export default function BlogIndex({ articles }) {
+  const title =
+    'Join us in a visionary exploration of the digital landscape, where we delve into the unfolding future, unraveling innovations, and groundbreaking trends that elevate our understanding of the digital realm. Discover the forefront of technological evolution and expand your horizons as we navigate the ever-evolving digital world together';
+  const description =
+    'Join us in a visionary exploration of the digital landscape, where we delve into the unfolding future, unraveling innovations, and groundbreaking trends that elevate our understanding of the digital realm. Discover the forefront of technological evolution and expand your horizons as we navigate the ever-evolving digital world together';
+  const metaKeywords = [
+  "Future Technology",
+  "Digital Trends",
+  "Innovation Insights",
+  "Technological Evolution",
+  "Digital Transformation",
+  "Emerging Technologies",
+  "Futuristic Perspectives",
+  "Tech Exploration",
+  "Digital Innovations",
+  "Cyberworld Insights"
+];
+
+
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [uniqueCategories, setUniqueCategories] = useState([]);
   const { viewMode, toggleViewMode } = useResize(); // Use the custom hook

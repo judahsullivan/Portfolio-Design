@@ -1,8 +1,8 @@
 import { FiArrowRight } from 'react-icons/fi';
 import { MdCard, DtCard } from '../components/articleCards/index.js';
 import { Fragment } from 'react';
-
 import { useResize } from '@/utils/useResize';
+import Link from 'next/link.js';
 
 export default function FeaturedArtices({ articles }) {
   const { viewMode } = useResize();
@@ -12,11 +12,11 @@ export default function FeaturedArtices({ articles }) {
   }
 
   return (
-    <section className="w-full mx-auto min-h-screen flex-col gap-10 flex justify-around overflow-hidden ">
+    <section className="w-full mx-auto min-h-screen flex-col gap-6 flex justify-center overflow-hidden ">
       <h4 className="font-basement text-theme-muted text-lg tracking-tight font-extrabold">
         Featured Articles
       </h4>
-      <div className="pt-[4rem]">
+      <div className="">
         {viewMode === 'grid' ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             {articles.map((article, index) => (
@@ -64,13 +64,17 @@ export default function FeaturedArtices({ articles }) {
           </div>
         )}
       </div>
-      <button className=" inline-flex items-center gap-5 place-self-end rounded-full hover:underline hover:text-theme-accent transition-colors duration-150 ease-linear underline-offset-4   ">
-        <span className="text-2xl relative">
-          View All Projects
+      <Link
+        href="/blog"
+        className=" inline-flex items-center gap-5 place-self-end rounded-full hover:underline hover:text-theme-accent transition-colors duration-150 ease-linear underline-offset-4   "
+        aria-label="view all articles"
+      >
+        <span className="text-lg relative">
+          View All Articles
           <span className="text-xs ml-1 absolute">{getArticleCount()}</span>
         </span>
         <FiArrowRight className="" />
-      </button>
+      </Link>
     </section>
   );
 }

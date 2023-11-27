@@ -5,6 +5,22 @@ import { FaList } from 'react-icons/fa';
 import { useResize } from '@/utils/useResize';
 
 export default function ProjectsIndex({ projects }) {
+  const title = 'Innovating Horizons: Crafting the Future of Digital Experiences';
+  const description =
+    "Explore the boundless realm of innovation where 'Innovating Horizons' converges with the art of crafting unparalleled digital experiences. Join us on a journey into the future, where imagination meets technology, shaping tomorrow's landscapes of immersive, transformative, and cutting-edge digital encounters. Witness the evolution of experiences through inventive design and pioneering technologies, as we redefine the very essence of digital interaction";
+  const projectMetaKeywords = [
+    'Digital Innovation',
+    'Future Experiences',
+    'Crafting Digital Futures',
+    'Innovative Horizons',
+    'Next-gen Experiences',
+    'Digital Transformation',
+    'Tech Evolution',
+    'Immersive Technologies',
+    'Experience Design',
+    'Cutting-edge Digital'
+  ];
+
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [uniqueCategories, setUniqueCategories] = useState([]);
   const { viewMode, toggleViewMode } = useResize(); // Use the custom hook

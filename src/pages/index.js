@@ -1,8 +1,6 @@
 import Hero from '@/components/pages/home/hero';
-import OverView from '@/components/pages/home/overview';
 import PageLayout from '@/components/layouts/pageLayout';
 import { homeData } from '@/utils/data';
-import FeaturedArticles from '@/components/pages/home/featuredArticles';
 import RecentProjects from '@/components/pages/home/recentProjects';
 import FeaturedArtices from '@/components/pages/home/featuredArticles';
 import { client } from '../../sanity/lib/client';
@@ -17,7 +15,6 @@ export default function Home({ featuredPost, recentProjects }) {
       keywords={homeData.keywords}
     >
       <Hero {...homeData.hero} />
-      {/* <OverView {...homeData.overview} /> */}
       <FeaturedArtices articles={featuredPost} />
       <RecentProjects projects={recentProjects} />
     </PageLayout>

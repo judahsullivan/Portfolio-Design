@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { FiArrowRight } from 'react-icons/fi';
 import { DtCard, MdCard } from '../components/articleCards';
 import { useResize } from '@/utils/useResize';
+import Link from 'next/link';
 
 export default function RecentProjects({ projects }) {
   const { viewMode } = useResize();
@@ -15,7 +16,7 @@ export default function RecentProjects({ projects }) {
       <h4 className="font-basement text-theme-muted text-lg tracking-tight font-extrabold">
         Recent Projects
       </h4>
-      <div className="pt-[4rem]">
+      <div className="">
         {viewMode === 'grid' ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             {projects.map((project, index) => (
@@ -65,13 +66,17 @@ export default function RecentProjects({ projects }) {
       </div>
 
       {/* <h1 className="text-5xl text-center ">Project Case Studies Coming Soon!</h1> */}
-      <button className=" inline-flex items-center gap-5 place-self-end rounded-full hover:underline hover:text-theme-accent transition-colors duration-150 ease-linear underline-offset-4   ">
-        <span className="text-2xl relative">
+      <Link
+        className=" inline-flex items-center gap-5 place-self-end rounded-full hover:underline hover:text-theme-accent transition-colors duration-150 ease-linear underline-offset-4   "
+        href="/projects"
+        aria-label="view all projects"
+      >
+        <span className="text-lg relative">
           View All Projects
           <span className="text-xs ml-1 absolute">{getProjectCount()}</span>
         </span>
         <FiArrowRight className="" />
-      </button>
+      </Link>
     </section>
   );
 }
