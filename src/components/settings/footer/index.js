@@ -24,17 +24,17 @@ export default function Footer() {
         <div key={index} className="space-y-20 max-w-5xl w-full mx-auto">
           <div className="flex-col flex gap-10 h-full w-full justify-between ">
             <div className="h-full">
-              <h1 className="px-2 text-3xl w-full mt-10 text-theme-inverted font-basement ">
+              <h2 className="px-2 text-3xl w-full mt-10 text-theme-inverted font-basement ">
                 Get In Touch
-              </h1>
+              </h2>
             </div>
             <div className="flex justify-center h-1/2 w-full flex-col-reverse md:flex-row-reverse gap-5 items-center ">
               <div className="grid grid-cols-2 gap-5 w-full text-center md:text-left">
                 {footer.pageLinks && (
                   <div key={footer.pageLinks.sectionName}>
-                    <h2 className="mb-6 font-grotesque font-semibold text-theme-accent uppercase  text-2xl underline underline-offset-2">
+                    <h3 className="mb-6 font-grotesque font-semibold text-theme-accent uppercase  text-2xl underline underline-offset-2">
                       {footer.pageLinks.sectionName}
-                    </h2>
+                    </h3>
                     <ul className="text-theme-muted-inverted">
                       {footer.pageLinks.links?.map((link, index) => (
                         <li key={index} className="mb-4 font-basement">
@@ -52,9 +52,9 @@ export default function Footer() {
                 )}
                 {footer.externalLinks && (
                   <div key={footer.externalLinks.sectionName}>
-                    <h2 className="mb-6 font-grotesque font-semibold text-theme-accent uppercase  text-2xl underline underline-offset-2">
+                    <h3 className="mb-6 font-grotesque font-semibold text-theme-accent uppercase  text-2xl underline underline-offset-2">
                       {footer.externalLinks.sectionName}
-                    </h2>
+                    </h3>
                     <ul className="text-theme-muted-inverted">
                       {footer.externalLinks.links?.map((link, index) => (
                         <li key={index} className="mb-4">

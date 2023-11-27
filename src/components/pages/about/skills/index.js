@@ -10,7 +10,7 @@ export default function Skills() {
       <div className="w-full grid justify-center gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {skills.map((skill, index) => (
           <div key={index} className=" w-[300px] h-[300px] items-center flex flex-col  p-4">
-            <div>
+            <div className="w-full">
               <p>{skill.number}</p>
             </div>
             <hr className="border-theme-muted w-full" />

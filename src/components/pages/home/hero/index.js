@@ -1,31 +1,34 @@
 import { motion } from 'framer-motion';
+import { useTextDifferentiation } from '@/utils/useTextDifferentation';
 import { FiArrowRight } from 'react-icons/fi';
 import Link from 'next/link.js';
 
 export default function Hero({ heading, roles }) {
   const phrase =
     'Enhancing brand presence through front-end expertise and leadership. Collaboratively shaping innovative digital experiences, setting a fresh standard.';
-  const textSegments = [
+  const callToAction = [
     'The combination of my passion for pixel ',
-    <span key="perfect">perfect design</span>,
+    { text: 'perfect design', key: 'perfect' },
     ', ',
-    <span key="clean">clean code</span>,
+    { text: 'clean code', key: 'clean' },
     ' & ',
-    <span key="interaction">user interaction</span>,
-    ' gives me the skillset to set a new height ',
-    <span key="web">web design world</span>,
+    { text: 'user interaction', key: 'interaction' },
+    ' gives me the skillset to set a new height in the ',
+    { text: 'web design world', key: 'web' },
     '.'
   ];
+  const cta = useTextDifferentiation(callToAction);
+
   return (
     <div className=" justify-center min-h-screen w-full flex flex-col">
       <div className=" space-y-10">
-        <h3 className="text-3xl font-bold">{heading}</h3>
+        <span className="text-3xl font-bold">{heading}</span>
         <h1 className="inline-block text-6xl md:text-8xl w-full leading-tight tracking-tighest font-basement font-extrabold ">
           {roles}
         </h1>
         <hr className="w-full mx-auto  border-theme-muted" />
         <div className={' gap-5  max-w-5xl flex justify-between mx-auto flex-col md:flex-row  '}>
-          <p className=" m-0 [&>*:nth-child(1)]:space-x-2 leading-[1.3] ">
+          <p className=" m-0 [&>*:nth-child(1)]:space-x-2 font-bold tracking-wide leading-[1.3] ">
             {phrase.split(' ').map((word, index) => {
               return (
                 <span
@@ -45,8 +48,7 @@ export default function Hero({ heading, roles }) {
           </p>
 
           <div className=" gap-4 flex flex-col w-full justify-between">
-            <p>{textSegments}</p>
-
+            <p className="leading-relaxed tracking-wide">{cta}</p>
             <Link
               href="/contact"
               className=" inline-flex items-center gap-5 place-self-end rounded-full hover:underline hover:text-theme-accent transition-colors duration-150 ease-linear underline-offset-4   "

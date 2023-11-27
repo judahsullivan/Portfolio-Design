@@ -21,7 +21,7 @@ const MdCard = ({ slug, title, publishedAt, mainImage, categories, alt }) => {
         <div className="flex flex-col gap-3">
           <div className="flex flex-col gap-2">
             <div className="text-2xl font-semibold -tracking-wider">
-              <h4>{title}</h4>
+              <h3>{title}</h3>
             </div>
           </div>
           <hr className="w-full border-theme-muted" />

@@ -37,11 +37,11 @@ export default function Navbar({}) {
           key={index}
           className="flex px-2 mx-auto justify-between items-center h-full max-w-6xl"
         >
-          <h4>
+          <p>
             <Link passHref href={navLinks.homelink.link}>
               {navLinks.homelink.title}
             </Link>
-          </h4>
+          </p>
           <nav className="hidden md:block space-x-2">
             {navLinks.pageLinks.links.map((link) => (
               <Link passHref key={link.key} href={link.url}>

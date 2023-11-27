@@ -1,0 +1,45 @@
+import Link from 'next/link';
+import Image from 'next/image';
+import About from '@/public/assets/images/about.jpg';
+
+export default function AboutHero() {
+  return (
+    <div className="min-h-screen w-full flex flex-col items-center gap-y-12 justify-center ">
+      <h1 className=" text-4xl lg:text-6xl font-basement">
+        A Engineer, Thinker and Father with a desire to change the world!
+      </h1>
+      <hr className="w-full border-theme-base border" />
+      <section className="dark:bg-gray-800 dark:text-gray-100">
+        <div className=" w-full flex flex-col-reverse mx-auto lg:flex-row">
+          <div className="flex flex-cols space-y-6 rounded-sm sm:p-8 lg:p-12 lg:w-1/2 xl:w-2/5 ">
+            <p className="text-2xl  font-bold leading-none">A little about me</p>
+            <div className="space-y-2">
+              <p className="leading-snug text-theme-muted tracking-widest text-md max-w-sm">
+                Hello there! I&apos;m a developer with a passion for design and a knack for
+                problem-solving. Whether it&apos;s crafting beautiful user interfaces for the web or
+                developing innovative mobile applications. I am always eager to push myself and
+                expand my skillset. With a focus on continual learning and growth, I strive to stay
+                up-to-date with the latest technologies and best practices, ensuring that my work is
+                always top-notch.
+              </p>
+              <button aria-label="link to bio">
+                <Link href="">My Bio</Link>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div className="lg:w-3/4 h-[500px] flex-1  dark:bg-gray-800">
+          <div className="flex items-center justify-center p-4 md:p-8 lg:p-12">
+            <Image
+              src={About}
+              alt=""
+              width={400}
+              height={400}
+              className="rounded-lg object-cover shadow-lg   dark:bg-gray-500"
+            />
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
