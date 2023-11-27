@@ -6,7 +6,7 @@ import { useRef } from 'react';
 
 const MdCard = ({ slug, title, publishedAt, mainImage, categories, alt }) => {
   return (
-    <Link href={`${slug}`} className=" flex flex-col lg:hidden">
+    <Link href={`${slug}`} className=" flex flex-col ">
       <div className=" w-full h-full  bg-theme-muted rounded-[5px]">
         <Image
           src={mainImage}
