@@ -7,7 +7,7 @@ import { client } from '../../sanity/lib/client';
 import { featuredArticlesQuery } from '../../sanity/queries/postQueries';
 import { recentProjectsQuery } from '../../sanity/queries/projectQueries';
 
-export default function Home({ featuredPost, recentProjects }) {
+export default function Home({ homeData, featuredPost, recentProjects }) {
   return (
     <PageLayout
       title={homeData.title}
@@ -26,9 +26,10 @@ export async function getStaticProps() {
   const recentProjects = await client.fetch(recentProjectsQuery);
   return {
     props: {
+      homeData,
       featuredPost,
       recentProjects
     },
-    revalidate: 10
+    revalidate: 300
   };
 }
