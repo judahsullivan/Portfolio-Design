@@ -12,7 +12,6 @@ export default function App({ Component, pageProps }) {
       {isStudioPage ? (
         <Fragment>
           <Component {...pageProps} />
-          <Analytics />
         </Fragment>
       ) : (
         <AppLayout>
