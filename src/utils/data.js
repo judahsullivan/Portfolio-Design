@@ -14,7 +14,7 @@ export const homeData = {
   ],
   hero: {
     heading: 'Judah Sullivan',
-    roles: 'FullStack Engineer',
+    roles: 'Full-Stack Developer',
     description:
       'Passionate an Innovative developer with a design focus, pushing boundaries, solving complex challenges and  crafting beautiful an captivating user interfaces that leave a lasting impression. ',
     calltoAction:

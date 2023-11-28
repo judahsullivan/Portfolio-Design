@@ -6,13 +6,13 @@ import { useRef } from 'react';
 
 const MdCard = ({ slug, title, publishedAt, mainImage, categories, alt }) => {
   return (
-    <Link href={`${slug}`} className=" flex flex-col ">
-      <div className=" w-full h-full  bg-theme-muted rounded-[5px]">
+    <Link href={`${slug}`} className="w-full flex flex-col p-5 ">
+      <div className="  h-[400px] flex items-center justify-center p-5 bg-theme-muted rounded-[5px]">
         <Image
           src={mainImage}
-          width={600}
-          height={200}
-          className="h-full w-full  object-contain py-10 px-4 hover:scale-[101%] transition-all duration-200 rounded-[2px]"
+          width={1300}
+          height={500}
+          className="h-[220px] w-full  object-cover hover:scale-[101%] transition-all duration-200 rounded-[2px]"
           alt={alt}
         />
       </div>
@@ -81,7 +81,7 @@ const DtCard = ({ title, slug, publishedAt, mainImage, categories, alt }) => {
           <motion.span className=" z-10 font-aileron block text-5xl font-semibold text-theme-base transition-colors duration-500 group-hover:text-theme-accent ">
             <motion.span className="inline-block">{title}</motion.span>
           </motion.span>
-          <motion.img
+          <motion.div
             style={{
               top,
               left,
@@ -93,10 +93,16 @@ const DtCard = ({ title, slug, publishedAt, mainImage, categories, alt }) => {
               whileHover: { scale: 1, rotate: '0' }
             }}
             transition={{ type: 'spring' }}
-            src={mainImage}
-            className=" w-[300px] h-[200px] z-0 absolute rounded-lg object-cover bg-theme-muted p-5"
-            alt={alt}
-          />
+            className="w-[300px] h-[300px] flex items-center justify-center z-0 overflow-hidden absolute rounded-lg object-cover bg-theme-muted p-5"
+          >
+            <Image
+              width={1000}
+              height={500}
+              src={mainImage}
+              alt={alt}
+              className="w-[400px] max-h-[400px]  object-cover"
+            />
+          </motion.div>
         </Link>
       </th>
       <td className="px-6 py-4 ">

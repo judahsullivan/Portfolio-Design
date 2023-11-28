@@ -24,7 +24,7 @@ export default function Hero({ heading, roles }) {
       <div className="space-y-7 lg:space-y-10">
         <div>
           <span className="text-3xl font-grotesque text-theme-accent font-bold">{heading}</span>
-          <h1 className="inline-block text-6xl md:text-8xl w-full leading-tight tracking-tighest font-basement font-extrabold ">
+          <h1 className="inline-flex text-4xl lg:text-7xl relative w-full leading-tight tracking-tighest font-basement font-extrabold ">
             {roles}
           </h1>
         </div>

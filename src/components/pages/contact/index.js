@@ -36,7 +36,7 @@ export default function ContactIndex() {
       id="contact"
       className="min-h-screen flex flex-col gap-10 justify-center items-center w-full  text-theme-base"
     >
-      <h1 className=" text-4xl lg:text-6xl font-basement">Ready to reach out?</h1>
+      <h1 className=" text-4xl lg:text-6xl font-basement">Ready to get in Touch?</h1>
       <hr className="w-full border-theme-base " />
       {formError && (
         <motion.div
