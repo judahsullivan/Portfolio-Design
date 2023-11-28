@@ -6,7 +6,11 @@ import { useRef } from 'react';
 
 const MdCard = ({ slug, title, publishedAt, mainImage, categories, alt }) => {
   return (
-    <Link aria-label={slug} href={`${slug}`} className="w-full flex flex-col p-5 ">
+    <Link
+      aria-label={`${title} ${publishedAt}`}
+      href={`${slug}`}
+      className="w-full flex flex-col p-5 "
+    >
       <div className="  h-[400px] flex items-center justify-center p-5 bg-theme-muted rounded-[5px]">
         <Image
           src={mainImage}
@@ -79,7 +83,7 @@ const DtCard = ({ title, slug, publishedAt, mainImage, categories, alt }) => {
       whileHover="whileHover"
     >
       <th scope="row" className="px-6 py-4 ">
-        <Link aria-label={title} href={`${slug}`}>
+        <Link aria-label={`${title} ${publishedAt}`} href={`${slug}`}>
           <motion.span className=" z-10 font-aileron block text-5xl font-semibold text-theme-base transition-colors duration-500 group-hover:text-theme-accent ">
             <motion.span className="inline-block">{title}</motion.span>
           </motion.span>

@@ -73,7 +73,8 @@ export default function RecentProjects({ projects }) {
         passHref
         role="link"
         href="/projects"
-        aria-label="View all Projects "
+        aria-label={`View all Articles ${getProjectCount()}`}
+       
       >
         <span className="text-lg relative">
           View all Projects

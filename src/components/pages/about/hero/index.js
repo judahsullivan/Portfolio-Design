@@ -53,7 +53,7 @@ export default function AboutHero() {
             src={AboutImage}
             alt="About"
             loading="eager"
-            deoding="auto"
+            deoding="async"
             className="rounded-lg object-cover dark:bg-gray-500"
           />
         </div>
