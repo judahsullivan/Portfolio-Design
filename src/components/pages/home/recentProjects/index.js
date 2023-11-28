@@ -73,7 +73,7 @@ export default function RecentProjects({ projects }) {
         passHref
         role="link"
         href="/projects"
-        aria-label={`Browse all projects`}
+        aria-label={`Browse all Projects I have created`}
       >
         <span className="text-lg relative">
           View all Projects
