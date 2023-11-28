@@ -43,7 +43,9 @@ export default function ProjectCase({ project }) {
                   ))}
                 </p>
 
-                <p>{/* <FormattedDate dateString={project.publishedAt} /> */}</p>
+                <p>
+                  <FormattedDate dateString={project.publishedAt} />
+                </p>
               </div>
             </div>
 
