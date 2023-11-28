@@ -15,9 +15,11 @@ const SEO = ({ title, description, keywords, url }) => {
       <meta name="author" content={siteTitle} />
       <meta property="og:title" content={title || siteTitle} />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content={`https://judahsullivan/dev/${url}`} />{' '}
+      <meta property="og:url" content={`https://judahsullivan.dev/${url}`} />{' '}
       {/* Update og:url with canonical URL */}
       <meta property="og:image:alt" content={siteTitle} />
+<meta property="og:image" content="Link preview image URL"/>
+      <meta property="twitter:image" content="Twitter link preview image URL"/>
       <meta property="og:description" content={description || siteDescription} />
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:title" content={title || siteTitle} />
