@@ -22,14 +22,13 @@ export default function Hero({ heading, roles }) {
   return (
     <div className="md:justify-center min-h-screen w-full flex flex-col">
       <div className="space-y-7 lg:space-y-10">
-        <div>
-          <span className="text-3xl font-grotesque text-theme-accent font-bold">{heading}</span>
-          <h1 className="inline-flex text-4xl lg:text-7xl relative w-full leading-tight tracking-tighest font-basement font-extrabold ">
-            {roles}
-          </h1>
+        <h1 className="text-4xl lg:text-6xl font-basement text-theme-accent">{roles}</h1>
+        <div className="w-full">
+          <hr className="w-full border-theme-base border" />
+          <p className="w-full">
+            <span className="text-xl font-basement text-theme-base">{heading}</span>
+          </p>
         </div>
-
-        <hr className="w-full mx-auto  border-theme-muted" />
         <div className={' gap-5  max-w-5xl flex justify-between mx-auto flex-col md:flex-row  '}>
           <p className=" m-0 [&>*:nth-child(1)]:space-x-2 font-bold tracking-wide leading-[1.3] ">
             {phrase.split(' ').map((word, index) => {
@@ -50,8 +49,8 @@ export default function Hero({ heading, roles }) {
             })}
           </p>
 
-          <div className=" gap-4 flex flex-col w-full justify-between">
-            <p className="leading-relaxed tracking-wide">{cta}</p>
+          <div className=" gap-2 flex flex-col w-full justify-between">
+            <p className="leading-relaxed tracking-[2px] font-normal">{cta}</p>
             <Link
               href="/contact"
               role="link"

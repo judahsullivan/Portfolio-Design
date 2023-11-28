@@ -9,12 +9,11 @@ export const homeData = {
     'frontend-developer',
     'judah sullivan',
     'my featured blogs',
-    'my most recent projects',
-    'hero'
+    'my most recent projects'
   ],
   hero: {
     heading: 'Judah Sullivan',
-    roles: 'Full-Stack Developer',
+    roles: 'Full-Stack Enthusiast: Crafting Digital Worlds with Creativity',
     description:
       'Passionate an Innovative developer with a design focus, pushing boundaries, solving complex challenges and  crafting beautiful an captivating user interfaces that leave a lasting impression. ',
     calltoAction:

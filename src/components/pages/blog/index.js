@@ -50,7 +50,7 @@ export default function BlogIndex({ articles }) {
 
   return (
     <div className="min-h-screen justify-center space-y-10 flex flex-col items-center w-full">
-      <h1 className=" text-4xl lg:text-6xl font-basement">
+      <h1 className=" text-4xl lg:text-6xl font-basement text-theme-accent">
         Elevating Perspectives by Exploring the Future of the Digital World{' '}
       </h1>
       <hr className="w-full border-theme-base mt-10" />

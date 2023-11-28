@@ -13,7 +13,7 @@ export default function FeaturedArtices({ articles }) {
 
   return (
     <section className="w-full mx-auto min-h-screen flex-col gap-6 flex justify-center overflow-hidden ">
-      <h2 className="font-basement text-theme-muted text-lg tracking-tight font-extrabold">
+      <h2 className="text-theme-accent font-basement  text-lg tracking-tight font-extrabold">
         Featured Articles
       </h2>
       <div className="">

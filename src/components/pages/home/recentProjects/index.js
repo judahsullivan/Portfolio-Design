@@ -13,7 +13,7 @@ export default function RecentProjects({ projects }) {
 
   return (
     <section className="w-full mx-auto min-h-screen flex-col gap-10 flex justify-around overflow-hidden ">
-      <h2 className="font-basement text-theme-muted text-lg tracking-tight font-extrabold">
+      <h2 className="font-basement text-theme-accent text-lg tracking-tight font-extrabold">
         Recent Projects
       </h2>
       <div className="">

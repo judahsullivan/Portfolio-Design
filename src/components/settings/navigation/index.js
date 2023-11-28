@@ -39,7 +39,9 @@ export default function Navbar({}) {
         >
           <p>
             <Link passHref href={navLinks.homelink.link}>
-              {navLinks.homelink.title}
+              coded by{' '}
+              <span className="font-basement text-theme-accent">
+                Judah Sullivan              </span>
             </Link>
           </p>
           <nav className="hidden md:block space-x-2">

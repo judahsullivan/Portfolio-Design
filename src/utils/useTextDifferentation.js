@@ -4,13 +4,13 @@ export const useTextDifferentiation = (description) => {
   const renderSegments = description.map((segment, index) => {
     if (typeof segment === 'object') {
       return (
-        <span key={segment.key} custom={index} className="mr-1.5  font-bold ">
+        <span key={segment.key} custom={index} className="!capitalize font-bold text-theme-accent">
           {segment.text}
         </span>
       );
     } else {
       return (
-        <span key={index} custom={index} className=" mr-1.5 font-thin normal-case  text-theme-base">
+        <span key={index} custom={index} className="font-normal  text-theme-base">
           {segment}
         </span>
       );

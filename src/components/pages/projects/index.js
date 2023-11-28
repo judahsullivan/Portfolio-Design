@@ -49,7 +49,7 @@ export default function ProjectsIndex({ projects }) {
 
   return (
     <div className="min-h-screen justify-center space-y-10 flex flex-col items-center w-full">
-      <h1 className="text-4xl lg:text-6xl font-basement">
+      <h1 className="text-4xl lg:text-6xl font-basement text-theme-accent">
         Innovating Horizons: Crafting the Future of Digital Experiences
       </h1>
       <hr className="w-full border-theme-base mt-10" />

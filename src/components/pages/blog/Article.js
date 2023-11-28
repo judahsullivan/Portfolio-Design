@@ -15,7 +15,7 @@ export default function ArticleIndex({ article }) {
         <h1>Loading...</h1>
       ) : (
         <div className="min-h-screen w-full  flex flex-col items-center gap-y-4 justify-center">
-          <h1 className="text-4xl lg:text-6xl font-basement">{article.title}</h1>
+          <h1 className="text-4xl lg:text-6xl text-theme-accent font-basement">{article.title}</h1>
           <div className="w-full">
             <hr className="w-full border-theme-base border" />
             <p className="w-full">

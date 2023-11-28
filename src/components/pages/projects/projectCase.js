@@ -15,11 +15,13 @@ export default function ProjectCase({ project }) {
         <h1>Loading...</h1>
       ) : (
         <div className="min-h-screen w-full  flex flex-col items-center gap-y-4 justify-center">
-          <h1 className="text-4xl lg:text-6xl font-basement">{project.title}</h1>
+          <h1 className="text-4xl lg:text-6xl text-theme-accent font-basement">{project.title}</h1>
           <div className="w-full">
             <hr className="w-full border-theme-base border" />
             <p className="w-full">
-              <span className="text-xl">{project.projectCategory.title}</span>
+              <span className="text-xl font-basement text-theme-accent">
+                {project.projectCategory.title}
+              </span>
             </p>
           </div>
 
@@ -27,7 +29,7 @@ export default function ProjectCase({ project }) {
             <div className="w-full justify-between pb-10 flex flex-col">
               <div className=" max-w-md flex-col flex items-center justify-between  gap-5 h-full">
                 <h2 className="text-2xl font-semibold ">{project.heading}</h2>
-                <p className="leading-relaxed tracking-widest text-lg">
+                <p className="leading-relaxed tracking-wide text-lg">
                   <span className="text-theme-base relative overflow-hidden pb-1.5 text-md font-thin">
                     {project.description}
                   </span>
@@ -37,7 +39,7 @@ export default function ProjectCase({ project }) {
                     {project.projectTags.map((tag) => (
                       <span
                         key={tag.title}
-                        className=" bg-theme-muted rounded-md text-theme-muted-inverted relative overflow-hidden pb-1.5 text-xs p-2 font-thin"
+                        className=" bg-theme-accent rounded-md text-theme-muted-inverted relative overflow-hidden pb-1.5 text-xs p-2 font-thin"
                       >
                         {tag.title}
                       </span>

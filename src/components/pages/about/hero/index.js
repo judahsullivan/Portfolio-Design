@@ -26,13 +26,17 @@ export default function AboutHero() {
   const renderedDescription = useTextDifferentiation(description);
   return (
     <div className="min-h-screen w-full  flex flex-col items-center gap-y-12 justify-center">
-      <h1 className="text-4xl lg:text-6xl font-basement">{heading}</h1>
-      <hr className="w-full border-theme-base border" />
+      <h1 className="text-4xl lg:text-6xl font-basement text-theme-accent">{heading}</h1>
+      <div className="w-full">
+        <hr className="w-full border-theme-base border" />
+        <p className="w-full">
+          <span className="text-xl font-basement text-theme-base">Here is a little about me</span>
+        </p>
+      </div>
       <section className="flex w-full flex-col lg:flex-row">
         <div className="w-full justify-between pb-10 flex flex-col">
-          <h2 className="text-lg font-basement">Here is a little about me</h2>
           <div className=" max-w-md flex-col flex justify-around h-full">
-            <p className="leading-relaxed tracking-widest text-lg">
+            <p className="leading-relaxed tracking-wide text-lg">
               <span className="relative overflow-hidden pb-1.5 text-md font-thin">
                 {renderedDescription}
               </span>

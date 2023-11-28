@@ -73,7 +73,7 @@ const DtCard = ({ title, slug, publishedAt, mainImage, categories, alt }) => {
 
   return (
     <motion.tr
-      className="relative overscroll-y-none border-b   border-theme-muted h-[200px]"
+      className="relative overscroll-y-none border-b   border-theme-muted h-[150px]"
       onMouseMove={handleMouseMove}
       ref={ref}
       initial="initial"
@@ -82,7 +82,7 @@ const DtCard = ({ title, slug, publishedAt, mainImage, categories, alt }) => {
       <th scope="row" className="px-6 py-4 ">
         <Link href={`${slug}`}>
           <span className="sr-only">{`Read ${title}`}</span>
-          <motion.span className=" z-10 font-aileron block text-5xl font-semibold text-theme-base transition-colors duration-500 group-hover:text-theme-accent ">
+          <motion.span className=" z-10 font-aileron block text-2xl font-semibold text-theme-base transition-colors duration-500 group-hover:text-theme-accent ">
             <motion.span className="inline-block">{title}</motion.span>
           </motion.span>
           <motion.div
