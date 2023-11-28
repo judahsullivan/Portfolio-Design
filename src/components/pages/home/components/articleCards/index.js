@@ -6,7 +6,8 @@ import { useRef } from 'react';
 
 const MdCard = ({ slug, title, publishedAt, mainImage, categories, alt }) => {
   return (
-    <Link aria-label={`Read ${title}`} href={`${slug}`} className="w-full flex flex-col p-5 ">
+    <Link href={`${slug}`} className="w-full flex flex-col p-5 ">
+      <span className="sr-only">{`Read ${title}`}</span>
       <div className="  h-[400px] flex items-center justify-center p-5 bg-theme-muted rounded-[5px]">
         <Image
           src={mainImage}
@@ -79,7 +80,8 @@ const DtCard = ({ title, slug, publishedAt, mainImage, categories, alt }) => {
       whileHover="whileHover"
     >
       <th scope="row" className="px-6 py-4 ">
-        <Link aria-label={`Read ${title}`} href={`${slug}`}>
+        <Link href={`${slug}`}>
+          <span className="sr-only">{`Read ${title}`}</span>
           <motion.span className=" z-10 font-aileron block text-5xl font-semibold text-theme-base transition-colors duration-500 group-hover:text-theme-accent ">
             <motion.span className="inline-block">{title}</motion.span>
           </motion.span>
@@ -110,12 +112,14 @@ const DtCard = ({ title, slug, publishedAt, mainImage, categories, alt }) => {
         </Link>
       </th>
       <td className="px-6 py-4 ">
-        <Link aria-label={categories.title} href={`${slug}`}>
+        <Link href={`${slug}`}>
+          <span className="sr-only">{`Read ${title}`}</span>
           {categories && <span className="text-lg text-theme-base">{categories.title}</span>}
         </Link>
       </td>
       <td className="px-6 py-4 ">
-        <Link href={`${slug}`} aria-label={title}>
+        <Link href={`${slug}`}>
+          <span className="sr-only">{`Read ${title}`}</span>
           <FormattedDate dateString={publishedAt} />
         </Link>
       </td>

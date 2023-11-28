@@ -71,8 +71,8 @@ export default function FeaturedArtices({ articles }) {
         role="link"
         className=" inline-flex items-center gap-5 place-self-end rounded-full hover:underline hover:text-theme-accent transition-colors duration-150 ease-linear underline-offset-4   "
         passHref
-        aria-label={`Explore all Articles I have created.`}
       >
+        <span className="sr-only">Explore all Articles I have created.</span>
         <span className="text-lg relative">
           View all Articles
           <span className="text-xs ml-1 absolute">{getArticleCount()}</span>
