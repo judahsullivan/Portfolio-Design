@@ -37,12 +37,14 @@
   @font-face {
     font-family: Grotesque;
     src: url(../../public/assets/fonts/basement/BasementGrotesque-Black_v1.202.woff) format('woff');
+    font-display: swap;
   }
 
   @font-face {
     font-family: Basement-Grotesque;
     src: url(../../public/assets/fonts/basement/BasementGrotesque-Black_v1.202.woff2)
       format('woff2');
+    font-display: swap;
   }
 
   html,
@@ -62,5 +64,4 @@
   p > span {
     @apply text-theme-accent capitalize font-bold;
   }
-  
 }
