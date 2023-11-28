@@ -1,14 +1,8 @@
-import { format, parse, isValid } from 'date-fns';
+import { format, parseISO } from 'date-fns';
 
-export default function PostDate({ dateString }) {
+export default function FormattedDate({ dateString }) {
   if (!dateString) return null;
 
-  const parsedDate = parse(dateString, 'yyyy-MM-dd', new Date());
-
-  if (!isValid(parsedDate)) {
-    console.error('Invalid date:', dateString);
-    return null;
-  }
-
-  return <time dateTime={parsedDate.toISOString()}>{format(parsedDate, 'LLL dd, yyyy')}</time>;
+  const date = parseISO(dateString);
+  return <time dateTime={dateString}>{format(date, 'LLLL	d, yyyy')}</time>;
 }

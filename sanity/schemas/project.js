@@ -60,16 +60,13 @@ export const project = {
       type: 'array',
       of: [{ type: 'reference', to: { type: 'tags' } }]
     },
-
     {
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',
-      options: {
-        dateFormate: 'YYYY-MM',
-        calenderTodayLabel: 'today'
-      }
+      initialValue: () => new Date().toISOString()
     },
+
     {
       name: 'body',
       title: 'Body',

@@ -71,19 +71,7 @@ export const post = {
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',
-      options: {
-        dateFormat: 'MM-YYYY' // Set the desired format for display
-      },
-      initialValue: () => {
-        const currentDate = new Date();
-        const year = currentDate.getFullYear();
-        const month = `${currentDate.getMonth() + 1}`.padStart(2, '0'); // Months are zero-indexed, so add 1
-
-        // Format the date to YYYY-MM
-        const formattedDate = `${year}-${month}`;
-
-        return formattedDate;
-      }
+      initialValue: () => new Date().toISOString()
     },
     {
       name: 'body',
