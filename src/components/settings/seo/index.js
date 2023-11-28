@@ -23,7 +23,7 @@ const SEO = ({ title, description, keywords, url }) => {
       <meta property="twitter:title" content={title || siteTitle} />
       <meta property="twitter:description" content={description || siteDescription} />
       <meta property="twitter:image:alt" content={siteTitle} />
-      <link rel="canonical" href={`https://judahsullivan/dev/${url}`} /> {/* Canonical URL */}
+      <link rel="canonical" href={`https://judahsullivan.dev/${url}`} /> {/* Canonical URL */}
       <link rel="shortcut icon" href="/assets/images/memojis/navbar.png" type="image/png" />{' '}
       {/* Update type */}
     </Head>
