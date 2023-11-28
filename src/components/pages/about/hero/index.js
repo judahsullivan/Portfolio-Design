@@ -44,9 +44,9 @@ export default function AboutHero() {
             <Link
               className=" inline-flex items-center gap-5 place-self-start lg:place-self-end rounded-full hover:underline hover:text-theme-accent transition-colors duration-150 ease-linear underline-offset-4   "
               href="/bio"
-              aria-label="view all projects"
             >
-              <span className="text-lg relative">Head to Bio</span>
+              <span className="sr-only">Head to my Bio</span>
+              <span className="text-lg relative ">Head to Bio</span>
               <FiArrowRight className="" />
             </Link>
           </div>
