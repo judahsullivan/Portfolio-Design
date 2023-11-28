@@ -4,8 +4,9 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
-
-      <link rel="stylesheet" href="https://use.typekit.net/gqb5zul.css" />
+      <noscript>
+        <link rel="preload" as="style" href="https://use.typekit.net/gqb5zul.css" />
+      </noscript>
       <body>
         <Main />
         <NextScript />

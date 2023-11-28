@@ -24,7 +24,7 @@ export default function RecentProjects({ projects }) {
                 <MdCard
                   title={project.title}
                   publishedAt={project.publishedAt}
-                        slug={`/projects/${project.slug}`}
+                  slug={`/projects/${project.slug}`}
                   mainImage={project.mainImage.asset.url}
                   alt={project.mainImage.alt}
                   categories={project.projectCategory}
@@ -57,7 +57,7 @@ export default function RecentProjects({ projects }) {
                       mainImage={project.mainImage.asset.url}
                       alt={project.mainImage.alt}
                       categories={project.projectCategory} // Pass projectCategories to MdCard
-                        slug={`/projects/${project.slug}`}
+                      slug={`/projects/${project.slug}`}
                     />
                   </Fragment>
                 ))}
@@ -70,8 +70,10 @@ export default function RecentProjects({ projects }) {
       {/* <h1 className="text-5xl text-center ">Project Case Studies Coming Soon!</h1> */}
       <Link
         className=" inline-flex items-center gap-5 place-self-end rounded-full hover:underline hover:text-theme-accent transition-colors duration-150 ease-linear underline-offset-4   "
+        passHref
+        role="link"
         href="/projects"
-        aria-label="view all projects"
+        aria-label="View all projects"
       >
         <span className="text-lg relative">
           View All Projects

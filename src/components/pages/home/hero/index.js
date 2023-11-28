@@ -54,8 +54,10 @@ export default function Hero({ heading, roles }) {
             <p className="leading-relaxed tracking-wide">{cta}</p>
             <Link
               href="/contact"
+              role="link"
+              passHref
               className=" inline-flex items-center gap-5 place-self-end rounded-full hover:underline hover:text-theme-accent transition-colors duration-150 ease-linear underline-offset-4   "
-              aria-label="head to contact page"
+              aria-label="Contact page"
             >
               <span className="text-lg relative">Get in Touch</span>
               <FiArrowRight className="" />

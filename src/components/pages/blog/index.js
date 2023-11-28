@@ -58,13 +58,23 @@ export default function BlogIndex({ articles }) {
       <div className="w-full">
         <div className="flex px-5 flex-col justify-between items-center md:flex-row">
           <div className="flex relative w-full flex-wrap text-xl gap-10 items-center">
-            <button onClick={() => filterArticles('All')}>
+            <button
+              role="filter"
+              aria-label="All blog Buttons"
+              onClick={() => filterArticles('All')}
+            >
               All
               <span className="text-xs ml-2 absolute">{getArticleCount('All')}</span>
+              <span className="sr-only">All categories</span>
             </button>
 
             {uniqueCategories.map((category, index) => (
-              <button key={index} onClick={() => filterArticles(category)}>
+              <button
+                role="filter"
+                aria-label="Filtered categories"
+                key={index}
+                onClick={() => filterArticles(category)}
+              >
                 {category}
                 <span className="text-xs ml-1 absolute">{getArticleCount(category)}</span>
               </button>

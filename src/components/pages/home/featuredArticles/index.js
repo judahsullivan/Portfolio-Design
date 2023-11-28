@@ -68,8 +68,10 @@ export default function FeaturedArtices({ articles }) {
       </div>
       <Link
         href="/blog"
+        role="link"
         className=" inline-flex items-center gap-5 place-self-end rounded-full hover:underline hover:text-theme-accent transition-colors duration-150 ease-linear underline-offset-4   "
-        aria-label="view all articles"
+        passHref
+        aria-label="View all articles"
       >
         <span className="text-lg relative">
           View All Articles
