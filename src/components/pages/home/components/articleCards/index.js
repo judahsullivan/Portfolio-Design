@@ -31,7 +31,9 @@ const MdCard = ({ slug, title, publishedAt, mainImage, categories, alt }) => {
                 <span className="text-theme-base unset text-lg">{categories.title}</span>
               )}
             </p>
-            <p>{/* <FormattedDate dateString={publishedAt} /> */}</p>
+            <p>
+              <FormattedDate dateString={publishedAt} />
+            </p>
           </div>
         </div>
       </div>
@@ -103,7 +105,9 @@ const DtCard = ({ title, slug, publishedAt, mainImage, categories, alt }) => {
         </Link>
       </td>
       <td className="px-6 py-4 ">
-        <Link href={`${slug}`}>{/* <FormattedDate dateString={publishedAt} /> */}</Link>
+        <Link href={`${slug}`}>
+          <FormattedDate dateString={publishedAt} />
+        </Link>
       </td>
     </motion.tr>
   );

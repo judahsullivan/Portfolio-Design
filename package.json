@@ -31,6 +31,7 @@
     "@vercel/analytics": "^1.1.1",
     "emailjs": "^4.0.3",
     "framer-motion": "^10.16.5",
+    "moment": "^2.29.4",
     "next": "^14.0.3",
     "next-sanity": "^6.0.5",
     "punycode": "^2.3.1",

@@ -1,8 +1,18 @@
-import { format, parseISO } from 'date-fns';
+import moment from 'moment';
 
-export default function FormattedDate({ dateString }) {
+export default function PostDate({ dateString }) {
   if (!dateString) return null;
 
-  const date = parseISO(dateString);
-  return <time dateTime={dateString}>{format(date, 'LLLL	d, yyyy')}</time>;
+  const parsedDate = moment(dateString, 'YYYY-MM-DD'); // Parse with the specific format
+
+  if (!parsedDate.isValid()) {
+    console.error('Invalid date:', dateString);
+    return null;
+  }
+
+  return (
+    <time dateTime={parsedDate.toISOString()}>
+      {parsedDate.format('MMM DD, YYYY')} {/* Format as 'MMM DD, YYYY' */}
+    </time>
+  );
 }
