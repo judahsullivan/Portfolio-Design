@@ -9,6 +9,16 @@ export const project = {
       type: 'string'
     },
     {
+      name: 'heading',
+      title: 'Heading',
+      type: 'string'
+    },
+    {
+      name: 'description',
+      title: 'Description',
+      type: 'text'
+    },
+    {
       name: 'slug',
       title: 'Slug',
       type: 'slug',

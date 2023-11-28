@@ -57,10 +57,10 @@
     @apply text-theme-base;
   }
   p {
-    @apply text-lg text-theme-muted;
+    @apply normal-case text-theme-muted;
   }
-
-  :link {
-    @apply font-medium tracking-wide;
+  p > span {
+    @apply text-theme-accent capitalize font-bold;
   }
+  
 }

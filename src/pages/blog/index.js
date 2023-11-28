@@ -1,7 +1,8 @@
 import PageLayout from '@/components/layouts/pageLayout';
 import BlogIndex from '@/components/pages/blog';
-import { client } from '../../../sanity/lib/client';
-import { ArticleQuery } from '../../../sanity/queries/postQueries';
+import {
+  getAllArticles,
+} from '../../../sanity/queries/postQueries';
 
 export default function Blog({ articles }) {
   return (
@@ -12,7 +13,7 @@ export default function Blog({ articles }) {
 }
 
 export async function getStaticProps() {
-  const articles = await client.fetch(ArticleQuery);
+  const articles = await getAllArticles();
 
   return {
     props: {

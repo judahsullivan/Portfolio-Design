@@ -27,6 +27,7 @@ export default function FeaturedArtices({ articles }) {
                   mainImage={article.mainImage.asset.url}
                   alt={article.mainImage.alt}
                   categories={article.categories}
+                  slug={`/blog/${article.slug}`}
                 />
               </Fragment>
             ))}
@@ -54,6 +55,7 @@ export default function FeaturedArtices({ articles }) {
                       title={article.title}
                       publishedAt={article.publishedAt}
                       mainImage={article.mainImage.asset.url}
+                      slug={`/blog/${article.slug}`}
                       alt={article.mainImage.alt}
                       categories={article.categories}
                     />

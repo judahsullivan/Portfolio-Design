@@ -4,6 +4,7 @@ import { client } from '../lib/client';
 const projectFields = groq`
 _type,
   title,
+heading,
     description,
       mainImage{
         alt,
@@ -26,18 +27,18 @@ _type,
       } 
 `;
 
-export const recentProjectsQuery = groq`
+const recentProjectsQuery = groq`
 *[_type == "project"] | order(publishedAt desc) [0..4]{
 ${projectFields}
 }
 `;
 
-export const projectCaseQueries = groq`
+const projectCaseQueries = groq`
 *[_type == "project"] | order(publishedAt desc) {
   ${projectFields}
 }`;
 
-export const projectsAndMoreProjectQueries = groq`
+const projectsAndMoreProjectQueries = groq`
 {
   "project": *[_type == "project" && slug.current == $slug] | order(publishedAt desc) [0] {
     body,
@@ -49,12 +50,12 @@ export const projectsAndMoreProjectQueries = groq`
   }
 }`;
 
-export const projectSlugsQuery = groq`
-*[_type == "post" && defined(slug.current)][].slug.current
+const projectSlugsQuery = groq`
+*[_type == "project" && defined(slug.current)][].slug.current
 `;
 
-export const projectBySlugQuery = groq`
-*[_type == "post" && slug.current == $slug][0] {
+const projectBySlugQuery = groq`
+*[_type == "project" && slug.current == $slug][0] {
   ${projectFields}
 }
 `;

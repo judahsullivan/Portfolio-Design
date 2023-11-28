@@ -24,6 +24,7 @@ export default function RecentProjects({ projects }) {
                 <MdCard
                   title={project.title}
                   publishedAt={project.publishedAt}
+                        slug={`/projects/${project.slug}`}
                   mainImage={project.mainImage.asset.url}
                   alt={project.mainImage.alt}
                   categories={project.projectCategory}
@@ -56,6 +57,7 @@ export default function RecentProjects({ projects }) {
                       mainImage={project.mainImage.asset.url}
                       alt={project.mainImage.alt}
                       categories={project.projectCategory} // Pass projectCategories to MdCard
+                        slug={`/projects/${project.slug}`}
                     />
                   </Fragment>
                 ))}
