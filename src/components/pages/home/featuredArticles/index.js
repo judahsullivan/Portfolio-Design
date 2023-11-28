@@ -74,7 +74,7 @@ export default function FeaturedArtices({ articles }) {
         aria-label="View all articles"
       >
         <span className="text-lg relative">
-          View All Articles
+          View all Articles
           <span className="text-xs ml-1 absolute">{getArticleCount()}</span>
         </span>
         <FiArrowRight className="" />

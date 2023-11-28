@@ -57,7 +57,7 @@ export default function Hero({ heading, roles }) {
               role="link"
               passHref
               className=" inline-flex items-center gap-5 place-self-end rounded-full hover:underline hover:text-theme-accent transition-colors duration-150 ease-linear underline-offset-4   "
-              aria-label="Contact page"
+              aria-label="Get in Touch"
             >
               <span className="text-lg relative">Get in Touch</span>
               <FiArrowRight className="" />

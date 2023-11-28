@@ -43,7 +43,6 @@ export default function BlogIndex({ articles }) {
       return articles.filter((article) => article.categories.title === category).length;
     }
   };
-
   const filteredArticles =
     selectedCategory === 'All'
       ? articles
@@ -58,11 +57,7 @@ export default function BlogIndex({ articles }) {
       <div className="w-full">
         <div className="flex px-5 flex-col justify-between items-center md:flex-row">
           <div className="flex relative w-full flex-wrap text-xl gap-10 items-center">
-            <button
-              role="filter"
-              aria-label="All blog Buttons"
-              onClick={() => filterArticles('All')}
-            >
+            <button role="filter" aria-label="All " onClick={() => filterArticles('All')}>
               All
               <span className="text-xs ml-2 absolute">{getArticleCount('All')}</span>
               <span className="sr-only">All categories</span>

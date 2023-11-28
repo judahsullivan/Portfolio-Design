@@ -6,10 +6,12 @@ import { useRef } from 'react';
 
 const MdCard = ({ slug, title, publishedAt, mainImage, categories, alt }) => {
   return (
-    <Link href={`${slug}`} className="w-full flex flex-col p-5 ">
+    <Link aria-label={slug} href={`${slug}`} className="w-full flex flex-col p-5 ">
       <div className="  h-[400px] flex items-center justify-center p-5 bg-theme-muted rounded-[5px]">
         <Image
           src={mainImage}
+          loading={'eager'}
+          decoding="async"
           width={1300}
           height={500}
           className="h-[220px] w-full  object-cover hover:scale-[101%] transition-all duration-200 rounded-[2px]"
@@ -77,7 +79,7 @@ const DtCard = ({ title, slug, publishedAt, mainImage, categories, alt }) => {
       whileHover="whileHover"
     >
       <th scope="row" className="px-6 py-4 ">
-        <Link href={`${slug}`}>
+        <Link aria-label={title} href={`${slug}`}>
           <motion.span className=" z-10 font-aileron block text-5xl font-semibold text-theme-base transition-colors duration-500 group-hover:text-theme-accent ">
             <motion.span className="inline-block">{title}</motion.span>
           </motion.span>
@@ -96,6 +98,8 @@ const DtCard = ({ title, slug, publishedAt, mainImage, categories, alt }) => {
             className="w-[300px] h-[300px] flex items-center justify-center z-0 overflow-hidden absolute rounded-lg object-cover bg-theme-muted p-5"
           >
             <Image
+              loading={'eager'}
+              decoding="async"
               width={1000}
               height={500}
               src={mainImage}
@@ -106,12 +110,12 @@ const DtCard = ({ title, slug, publishedAt, mainImage, categories, alt }) => {
         </Link>
       </th>
       <td className="px-6 py-4 ">
-        <Link href={`${slug}`}>
+        <Link aria-label={categories.title} href={`${slug}`}>
           {categories && <span className="text-lg text-theme-base">{categories.title}</span>}
         </Link>
       </td>
       <td className="px-6 py-4 ">
-        <Link href={`${slug}`}>
+        <Link href={`${slug}`} aria-label={slug}>
           <FormattedDate dateString={publishedAt} />
         </Link>
       </td>

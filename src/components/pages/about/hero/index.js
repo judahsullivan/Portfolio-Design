@@ -52,6 +52,8 @@ export default function AboutHero() {
           <Image
             src={AboutImage}
             alt="About"
+            loading="eager"
+            deoding="auto"
             className="rounded-lg object-cover dark:bg-gray-500"
           />
         </div>
