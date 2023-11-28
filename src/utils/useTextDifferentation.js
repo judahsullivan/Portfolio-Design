@@ -1,6 +1,5 @@
 import React from 'react';
 
-// Custom hook to differentiate text segments
 export const useTextDifferentiation = (description) => {
   const renderSegments = description.map((segment, index) => {
     if (typeof segment === 'object') {

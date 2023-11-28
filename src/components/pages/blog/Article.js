@@ -44,9 +44,7 @@ export default function ArticleIndex({ article }) {
                   ))}
                 </p>
 
-                <p>
-                  <FormattedDate dateString={article.publishedAt} />
-                </p>
+                <p>{/* <FormattedDate dateString={article.publishedAt} /> */}</p>
               </div>
             </div>
 

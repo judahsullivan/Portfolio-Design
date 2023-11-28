@@ -3,9 +3,8 @@ import PageLayout from '@/components/layouts/pageLayout';
 import { homeData } from '@/utils/data';
 import RecentProjects from '@/components/pages/home/recentProjects';
 import FeaturedArtices from '@/components/pages/home/featuredArticles';
-import { client } from '../../sanity/lib/client';
-import { featuredArticlesQuery, getFeaturedArticles } from '../../sanity/queries/postQueries';
-import { getRecentProjects, recentProjectsQuery } from '../../sanity/queries/projectQueries';
+import { getFeaturedArticles } from '../../sanity/queries/postQueries';
+import { getRecentProjects } from '../../sanity/queries/projectQueries';
 
 export default function Home({ homeData, featuredPost, recentProjects }) {
   return (
