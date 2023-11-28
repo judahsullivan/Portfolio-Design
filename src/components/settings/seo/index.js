@@ -1,11 +1,8 @@
 import Head from 'next/head';
+import { meta } from '@/utils/data';
 
 const SEO = ({ title, description, keywords, url }) => {
-  const siteTitle = 'Judah Sullivan';
-  const siteDescription =
-    'Welcome to my Portfolio and Blog. Where I share my progress and knowledge as a Engineer and Passionate Developer.';
-  const defaultKeywords =
-    'Next.js, Tailwindcss, Portfolio, Web development, front-end development, back-end development, full-stack development,  React, JavaScript, HTML, CSS, Git, Agile, Scrum, responsive design';
+  const { siteTitle, siteDescription, defaultKeywords } = meta;
 
   return (
     <Head>
