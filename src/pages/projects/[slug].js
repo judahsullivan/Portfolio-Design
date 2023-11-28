@@ -12,7 +12,11 @@ export default function Project({ project, moreProjects }) {
   }
 
   return (
-    <PageLayout title={''} description={''} keywords={''}>
+    <PageLayout
+      title={project.title}
+      description={project.description}
+      keywords={project.projectCategory.title}
+    >
       <ProjectCase project={project} moreProjects={moreProjects} />
     </PageLayout>
   );

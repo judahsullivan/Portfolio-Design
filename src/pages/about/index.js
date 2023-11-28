@@ -6,7 +6,7 @@ import TechStack from '@/components/pages/about/techstack';
 
 export default function Aboout() {
   return (
-    <PageLayout title="About" description="" keywords="">
+    <PageLayout url={'about'} title="About" description="" keywords="">
       <AboutHero />
       <Skills />
       {/* <TechStack /> */}

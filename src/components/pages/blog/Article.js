@@ -10,7 +10,7 @@ export default function ArticleIndex({ article }) {
     NotFound();
   }
   return (
-    <div className="flex min-h-screen w-full justify-center items-center ">
+    <div className="flex min-h-screen  w-full justify-center items-center ">
       {!article ? (
         <h1>Loading...</h1>
       ) : (
@@ -33,7 +33,7 @@ export default function ArticleIndex({ article }) {
                     {article.description}
                   </span>
                 </p>
-                <p className="leading-relaxed flex flex-wrap space-x-5 tracking-widest text-lg">
+                <p className="leading-relaxed flex flex-wrap gap-2 tracking-widest text-lg">
                   {article.tags.map((tag) => (
                     <span
                       key={tag.title}

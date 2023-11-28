@@ -12,6 +12,7 @@ export default function Home({ homeData, featuredPost, recentProjects }) {
       title={homeData.title}
       description={homeData.description}
       keywords={homeData.keywords}
+      url={''}
     >
       <Hero {...homeData.hero} />
       <FeaturedArtices articles={featuredPost} />

@@ -32,20 +32,22 @@ export default function ProjectCase({ project }) {
                     {project.description}
                   </span>
                 </p>
-                <p className="leading-relaxed flex flex-wrap gap-2 tracking-widest text-lg">
-                  {project.projectTags.map((tag) => (
-                    <span
-                      key={tag.title}
-                      className=" bg-theme-muted rounded-md text-theme-muted-inverted relative overflow-hidden pb-1.5 text-xs p-2 font-thin"
-                    >
-                      {tag.title}
-                    </span>
-                  ))}
-                </p>
+                <div className="flex flex-col gap-4 justify-center items-center lg:items-start  w-full ">
+                  <div className="flex flex-wrap justify-center lg:justify-normal items-center gap-2">
+                    {project.projectTags.map((tag) => (
+                      <span
+                        key={tag.title}
+                        className=" bg-theme-muted rounded-md text-theme-muted-inverted relative overflow-hidden pb-1.5 text-xs p-2 font-thin"
+                      >
+                        {tag.title}
+                      </span>
+                    ))}
+                  </div>
 
-                <p>
-                  <FormattedDate dateString={project.publishedAt} />
-                </p>
+                  <p className="text-center lg:text-start w-full">
+                    <FormattedDate dateString={project.publishedAt} />
+                  </p>
+                </div>
               </div>
             </div>
 

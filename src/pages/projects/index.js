@@ -9,6 +9,7 @@ export default function Projects({ projects }) {
     <PageLayout
       title={'Projects'}
       description={'List of Projects I have created over my time of being a Software Engineer'}
+      url={'projects'}
       keywords={['', '', '', '', '', '', '']}
     >
       <ProjectsIndex projects={projects} />

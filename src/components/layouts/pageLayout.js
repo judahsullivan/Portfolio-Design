@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 import SEO from '../settings/seo';
 import { LenisProvider } from './lenisProvider';
 
-export default function PageLayout({ children, title, description, keywords }) {
+export default function PageLayout({ children, title, description, keywords, url }) {
   return (
     <LenisProvider
       options={{
@@ -11,7 +11,7 @@ export default function PageLayout({ children, title, description, keywords }) {
         smoothWheel: true
       }}
     >
-      <SEO title={title} description={description} keywords={keywords} />
+      <SEO title={title} description={description} keywords={keywords} url={url} />
       <main>{children}</main>
     </LenisProvider>
   );

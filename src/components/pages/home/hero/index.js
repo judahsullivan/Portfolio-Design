@@ -20,12 +20,15 @@ export default function Hero({ heading, roles }) {
   const cta = useTextDifferentiation(callToAction);
 
   return (
-    <div className="lg:justify-center min-h-screen w-full flex flex-col">
-      <div className=" space-y-10">
-        <span className="text-3xl font-bold">{heading}</span>
-        <h1 className="inline-block text-6xl md:text-8xl w-full leading-tight tracking-tighest font-basement font-extrabold ">
-          {roles}
-        </h1>
+    <div className="md:justify-center min-h-screen w-full flex flex-col">
+      <div className="space-y-7 lg:space-y-10">
+        <div>
+          <span className="text-3xl font-grotesque text-theme-accent font-bold">{heading}</span>
+          <h1 className="inline-block text-6xl md:text-8xl w-full leading-tight tracking-tighest font-basement font-extrabold ">
+            {roles}
+          </h1>
+        </div>
+
         <hr className="w-full mx-auto  border-theme-muted" />
         <div className={' gap-5  max-w-5xl flex justify-between mx-auto flex-col md:flex-row  '}>
           <p className=" m-0 [&>*:nth-child(1)]:space-x-2 font-bold tracking-wide leading-[1.3] ">
