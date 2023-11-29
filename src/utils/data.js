@@ -14,10 +14,19 @@ export const homeData = {
   hero: {
     heading: 'Judah Sullivan',
     roles: 'Full-Stack Enthusiast: Crafting Digital Worlds with Creativity',
-    description:
-      'Passionate an Innovative developer with a design focus, pushing boundaries, solving complex challenges and  crafting beautiful an captivating user interfaces that leave a lasting impression. ',
-    calltoAction:
-      "Connect with me and stay updated by following my blog. Let's collaborate on creating exceptional user experiences and shaping the future of development. ✨🚀 Together, we can turn ideas into reality and make a lasting impact in the digital world! "
+   phrase: 
+    'Enhancing brand presence through front-end expertise and leadership. Collaboratively shaping innovative digital experiences, setting a fresh standard.',
+   callToAction : [
+    'The combination of my passion for pixel ',
+    { text: 'perfect design', key: 'perfect' },
+    ', ',
+    { text: 'clean code', key: 'clean' },
+    ' & ',
+    { text: 'user interaction', key: 'interaction' },
+    ' gives me the skillset to set a new height in the ',
+    { text: 'web design world', key: 'web' },
+    '.'
+  ],
   },
   overview: {
     heading: 'What Makes me Different',
