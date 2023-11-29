@@ -13,7 +13,7 @@ export const homeData = {
   ],
   hero: {
     heading: 'Judah Sullivan',
-    roles: 'Full-Stack Enthusiast: Crafting Digital Worlds with Creativity',
+    roles: 'Full-Stack Enthusiast: Crafting Digital Experiences through Creativity',
    phrase: 
     'Enhancing brand presence through front-end expertise and leadership. Collaboratively shaping innovative digital experiences, setting a fresh standard.',
    callToAction : [
