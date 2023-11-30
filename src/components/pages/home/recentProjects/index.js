@@ -3,19 +3,50 @@ import { FiArrowRight } from 'react-icons/fi';
 import { DtCard, MdCard } from '../components/articleCards';
 import { useResize } from '@/utils/useResize';
 import Link from 'next/link';
+import ContentAnimations from '@/components/common/contentAnimations/index.js';
 
 export default function RecentProjects({ projects }) {
   const { viewMode } = useResize();
+  const contentScope = ContentAnimations();
 
+  const title = 'Recent Projects';
+  const description =
+    'Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.';
   function getProjectCount() {
     return projects.length;
   }
 
   return (
-    <section className="w-full mx-auto min-h-screen flex-col gap-10 flex justify-around overflow-hidden ">
-      <h2 className="font-basement text-theme-accent text-lg tracking-tight font-extrabold">
-        Recent Projects
-      </h2>
+    <section
+      ref={contentScope}
+      className="w-full mx-auto min-h-screen flex-col gap-10 flex justify-around overflow-hidden "
+    >
+      <div>
+        <h2 className="space-x-2 text-theme-accent font-basement text-2xl md:text-4xl tracking-tight font-extrabold">
+          {title.split(' ').map((i, index) => {
+            return (
+              <span key={index} className="overflow-hidden inline-block">
+                <span className="title inline-block">{i}</span>
+              </span>
+            );
+          })}
+        </h2>
+        <div className="w-full">
+          <hr className="w-full mx-auto my-auto line border-theme-base border" />
+          <div>
+            <p className="space-x-1">
+              <span className="sr-only">{description}</span>
+              {description.split(' ').map((name, key) => {
+                return (
+                  <span key={key} className="overflow-hidden inline-block">
+                    <span className="text-xl   inline-block title  text-theme-base  ">{name}</span>
+                  </span>
+                );
+              })}
+            </p>
+          </div>
+        </div>
+      </div>
       <div className="">
         {viewMode === 'grid' ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">

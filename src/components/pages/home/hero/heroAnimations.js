@@ -1,5 +1,5 @@
-import { stagger, useAnimate, useInView } from 'framer-motion';
-import { useEffect, useRef } from 'react';
+import { stagger, useAnimate } from 'framer-motion';
+import { useEffect } from 'react';
 
 export default function HeroAnimations() {
   const [scope, animate] = useAnimate();

@@ -1,8 +1,17 @@
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import {
+  motion,
+  useMotionValue,
+  useMotionTemplate,
+  useScroll,
+  useSpring,
+  useTransform,
+  useInView,
+  animate
+} from 'framer-motion';
 import FormattedDate from '@/components/common/formattedDate';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const MdCard = ({ slug, title, publishedAt, mainImage, categories, alt }) => {
   return (

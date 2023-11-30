@@ -1,17 +1,29 @@
-import { motion, useAnimate, useInView } from 'framer-motion';
 import { useTextDifferentiation } from '@/utils/useTextDifferentation';
 import { FiArrowRight } from 'react-icons/fi';
 import Link from 'next/link.js';
 import HeroAnimations from './heroAnimations';
+import { useScroll, useSpring } from 'framer-motion';
 
 export default function Hero({ heading, roles, callToAction, phrase }) {
   const cta = useTextDifferentiation(callToAction);
   const scope = HeroAnimations();
 
+  // const { scrollYProgress } = useScroll({
+  //   target: ref,
+  //   offset: ['start start', 'end end']
+  // });
+  // const scrollYProgressSpring = useSpring(scrollYProgress, {
+  //   stiffness: 300,
+  //   damping: 40
+  // });
+  // const scale = useTransform(scrollYProgressSpring, [0, 1], [1, 12]);
+  // const imageX = useTransform(scrollYProgressSpring, [0, 1], [50, 0]);
+  // const imageXCalc = useMotionTemplate`max(0px, calc(${imageX}% + calc(${imageX}vw - 300px)))`;
+
   return (
     <div ref={scope} className="md:justify-center min-h-screen w-full flex flex-col">
-      <div className="space-y-7 lg:space-y-10">
-        <h1 className="space-x-2 lg:space-x-4">
+      <div className="flex flex-col gap-2">
+        <div className="flex flex-wrap gap-2 lg:gap-4">
           <span className="sr-only">{roles}</span>
           {roles.split(' ').map((role, key) => {
             return (
@@ -22,11 +34,11 @@ export default function Hero({ heading, roles, callToAction, phrase }) {
               </span>
             );
           })}
-        </h1>
+        </div>
         <div className="w-full">
           <hr className="w-full mx-auto my-auto line border-theme-base border" />
           <div>
-            <p className="space-x-2">
+            <h1 className="space-x-2">
               <span className="sr-only">{heading}</span>
               {heading.split(' ').map((name, key) => {
                 return (
@@ -37,7 +49,7 @@ export default function Hero({ heading, roles, callToAction, phrase }) {
                   </span>
                 );
               })}
-            </p>
+            </h1>
           </div>
         </div>
         <div className={' gap-5  max-w-5xl flex justify-between mx-auto flex-col md:flex-row  '}>
@@ -47,7 +59,7 @@ export default function Hero({ heading, roles, callToAction, phrase }) {
               return (
                 <span
                   key={index}
-                  className={'relative overflow-hidden pb-1.5 mx-w-sm text-2xl inline-flex'}
+                  className={'relative overflow-hidden  mx-w-sm text-2xl inline-flex'}
                 >
                   <span className={'mr-1.5 desc  normal-case text-theme-muted'}>{word}</span>
                 </span>

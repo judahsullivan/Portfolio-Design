@@ -1,51 +1,72 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useReducer } from 'react';
+
+// Define action types
+const RESIZE = 'RESIZE';
+const TOGGLE_VIEW_MODE = 'TOGGLE_VIEW_MODE';
+
+// Reducer function
+function reducer(state, action) {
+  switch (action.type) {
+    case RESIZE:
+      // Handle resize action
+      return {
+        ...state,
+        width: action.payload.width,
+        height: action.payload.height
+        // ...
+      };
+    case TOGGLE_VIEW_MODE:
+      // Handle toggle view mode action
+      return {
+        ...state,
+        viewMode: action.payload.mode
+      };
+    default:
+      return state;
+  }
+}
 
 export function useResize() {
-  const [windowSize, setWindowSize] = useState({
+  const initialState = {
     width: undefined,
     height: undefined,
     viewMode: undefined
-  });
+  };
+
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  const handleResize = () => {
+    if (typeof window !== 'undefined') {
+      dispatch({
+        type: RESIZE,
+        payload: {
+          width: window.innerWidth,
+          height: window.innerHeight
+        }
+      });
+    }
+  };
 
   const toggleViewMode = (mode) => {
     if (typeof window !== 'undefined') {
-      setWindowSize((prevWindowSize) => ({
-        ...prevWindowSize,
-        viewMode: mode
-      }));
+      dispatch({
+        type: TOGGLE_VIEW_MODE,
+        payload: {
+          mode
+        }
+      });
     }
   };
 
   useEffect(() => {
-    const handleResize = () => {
-      if (typeof window !== 'undefined') {
-        const width = window.innerWidth;
-        let viewMode = 'grid';
-
-        if (width <= 1008) {
-          viewMode = 'grid';
-        } else {
-          viewMode = width === 1010 ? 'list' : 'list'; // Condition for 1010 pixels, defaulting to 'list' for wider screens
-        }
-
-        setWindowSize({
-          width,
-          height: window.innerHeight,
-          viewMode
-        });
-      }
-    };
-
     if (typeof window !== 'undefined') {
-      handleResize(); // Set initial window size and view mode on component mount
-
+      handleResize();
       window.addEventListener('resize', handleResize);
-
       return () => {
         window.removeEventListener('resize', handleResize);
       };
     }
   }, []);
 
-  return { ...windowSize, toggleViewMode };
+  return { ...state, toggleViewMode };
 }
