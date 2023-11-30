@@ -8,15 +8,21 @@ const TOGGLE_VIEW_MODE = 'TOGGLE_VIEW_MODE';
 function reducer(state, action) {
   switch (action.type) {
     case RESIZE:
-      // Handle resize action
+      const { width, height } = action.payload;
+      let viewMode = state.viewMode;
+
+      if (width <= 1008) {
+        viewMode = 'grid';
+      } else {
+        viewMode = width === 1010 ? 'list' : 'list'; // Condition for 1010 pixels, defaulting to 'list' for wider screens
+      }
       return {
         ...state,
-        width: action.payload.width,
-        height: action.payload.height
-        // ...
+        width,
+        height,
+        viewMode
       };
     case TOGGLE_VIEW_MODE:
-      // Handle toggle view mode action
       return {
         ...state,
         viewMode: action.payload.mode
