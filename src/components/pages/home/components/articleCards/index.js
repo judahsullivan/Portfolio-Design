@@ -1,23 +1,17 @@
-import {
-  motion,
-  useMotionValue,
-  useMotionTemplate,
-  useScroll,
-  useSpring,
-  useTransform,
-  useInView,
-  animate
-} from 'framer-motion';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import FormattedDate from '@/components/common/formattedDate';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
+import ContentAnimations from '@/components/common/contentAnimations';
+import StringSplitter from '@/components/common/stringSplitter';
 
 const MdCard = ({ slug, title, publishedAt, mainImage, categories, alt }) => {
+  const contentScope = ContentAnimations();
   return (
-    <Link href={`${slug}`} className="w-full flex flex-col p-5 ">
+    <Link href={`${slug}`} ref={contentScope} className="w-full flex card flex-col p-5 ">
       <span className="sr-only">{`Read ${title}`}</span>
-      <div className="  h-[400px] flex items-center justify-center p-5 bg-theme-muted rounded-[5px]">
+      <div className=" container h-[400px] flex items-center justify-center p-5 bg-theme-muted rounded-[5px]">
         <Image
           src={mainImage}
           loading={'eager'}
@@ -33,18 +27,38 @@ const MdCard = ({ slug, title, publishedAt, mainImage, categories, alt }) => {
         <div className="flex flex-col gap-3">
           <div className="flex flex-col gap-2">
             <div className="text-2xl font-semibold -tracking-wider">
-              <h3>{title}</h3>
+              <h3 className="space-x-1">
+                {title.split(' ').map((t, index) => {
+                  return (
+                    <span key={index} className="overflow-hidden inline-block">
+                      <span className="text-theme-base card-description  text-lg inline-block">
+                        {t}
+                      </span>
+                    </span>
+                  );
+                })}
+              </h3>
             </div>
           </div>
-          <hr className="w-full border-theme-muted" />
+          <hr className="card-line w-full border-theme-muted" />
           <div className="flex px-2 w-full justify-between items-center">
             <p>
               {categories && (
-                <span className="text-theme-base unset text-lg">{categories.title}</span>
+                <span className="">
+                  {categories.title.split(' ').map((title, index) => {
+                    return (
+                      <span key={index} className="overflow-hidden inline-block">
+                        <span className="card-description text-theme-base unset text-lg inline-block">
+                          {title}
+                        </span>
+                      </span>
+                    );
+                  })}
+                </span>
               )}
             </p>
             <p>
-              <FormattedDate dateString={publishedAt} />
+              <FormattedDate dateString={publishedAt} animationName={'card-description'} />
             </p>
           </div>
         </div>
@@ -52,7 +66,7 @@ const MdCard = ({ slug, title, publishedAt, mainImage, categories, alt }) => {
     </Link>
   );
 };
-const DtCard = ({ title, slug, publishedAt, mainImage, categories, alt }) => {
+const DtCard = ({ contents }) => {
   const ref = useRef(null);
 
   const x = useMotionValue(0);
@@ -79,60 +93,62 @@ const DtCard = ({ title, slug, publishedAt, mainImage, categories, alt }) => {
     x.set(xPct);
     y.set(yPct);
   };
+  if (!contents) {
+    return <div> no content</div>;
+  }
 
   return (
-    <motion.tr
-      className="relative overscroll-y-none border-b   border-theme-muted h-[150px]"
-      onMouseMove={handleMouseMove}
-      ref={ref}
-      initial="initial"
-      whileHover="whileHover"
-    >
-      <th scope="row" className="px-6 py-4 ">
-        <Link href={`${slug}`}>
-          <span className="sr-only">{`Read ${title}`}</span>
-          <motion.span className=" z-10 font-aileron block text-2xl font-semibold text-theme-base transition-colors duration-500 group-hover:text-theme-accent ">
-            <motion.span className="inline-block">{title}</motion.span>
-          </motion.span>
-          <motion.div
-            style={{
-              top,
-              left,
-              translateX: '-60%',
-              translateY: '-50%'
-            }}
-            variants={{
-              initial: { scale: 0, rotate: '0' },
-              whileHover: { scale: 1, rotate: '0' }
-            }}
-            transition={{ type: 'spring' }}
-            className="w-[300px] h-[300px] flex items-center justify-center z-0 overflow-hidden absolute rounded-lg object-cover bg-theme-muted p-5"
-          >
-            <Image
-              loading={'eager'}
-              decoding="async"
-              width={1000}
-              height={500}
-              src={mainImage}
-              alt={alt}
-              className="w-[400px] max-h-[400px]  object-cover"
-            />
-          </motion.div>
-        </Link>
-      </th>
-      <td className="px-6 py-4 ">
-        <Link href={`${slug}`}>
-          <span className="sr-only">{`Read ${title}`}</span>
-          {categories && <span className="text-lg text-theme-base">{categories.title}</span>}
-        </Link>
-      </td>
-      <td className="px-6 py-4 ">
-        <Link href={`${slug}`}>
-          <span className="sr-only">{`Read ${title}`}</span>
-          <FormattedDate dateString={publishedAt} />
-        </Link>
-      </td>
-    </motion.tr>
+    <div className="text-left  mx-auto rtl:text-right   w-full mt-[4rem]">
+      {contents.map((content, index) => (
+        <motion.div
+          key={index}
+          className="relative  overscroll-y-none border-b   border-theme-muted h-[150px]"
+          onMouseMove={handleMouseMove}
+          ref={ref}
+          initial="initial"
+          whileHover="whileHover"
+        >
+          <Link href={`${content.slug}`}>
+            <span className="sr-only">{`Read ${content.title}`}</span>
+            <motion.span className="space-x-1">
+              {content.title.split(' ').map((t, index) => {
+                return (
+                  <span key={index} className="overflow-hidden inline-block">
+                    <span className="table-description  font-aileron  text-2xl font-semibold text-theme-base transition-colors duration-500 group-hover:text-theme-accent inline-block">
+                      {t}
+                    </span>
+                  </span>
+                );
+              })}
+            </motion.span>
+            <motion.div
+              style={{
+                top,
+                left,
+                translateX: '-60%',
+                translateY: '-50%'
+              }}
+              variants={{
+                initial: { scale: 0, rotate: '0' },
+                whileHover: { scale: 1, rotate: '0' }
+              }}
+              transition={{ type: 'spring' }}
+              className="w-[300px] h-[300px] flex items-center justify-center z-0 overflow-hidden absolute rounded-lg object-cover bg-theme-muted p-5"
+            >
+              <Image
+                loading={'eager'}
+                decoding="async"
+                width={1000}
+                height={500}
+                src={content.mainImage.asset.url}
+                alt={content.mainImage.alt}
+                className="w-[400px] max-h-[400px]  object-cover"
+              />
+            </motion.div>
+          </Link>
+        </motion.div>
+      ))}
+    </div>
   );
 };
 

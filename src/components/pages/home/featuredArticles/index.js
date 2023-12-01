@@ -1,13 +1,12 @@
 import { FiArrowRight } from 'react-icons/fi';
 import { MdCard, DtCard } from '../components/articleCards/index.js';
-import { Fragment } from 'react';
 import { useResize } from '@/utils/useResize';
 import Link from 'next/link.js';
 import ContentAnimations from '@/components/common/contentAnimations/index.js';
 
 export default function FeaturedArtices({ articles }) {
   const { viewMode } = useResize();
-  const contentScope = ContentAnimations();
+  const contentScopeRef = ContentAnimations();
   const title = 'Featured Articles';
   const description = 'Here are some of the recent articles I have written.';
 
@@ -17,7 +16,7 @@ export default function FeaturedArtices({ articles }) {
 
   return (
     <section
-      ref={contentScope}
+      ref={contentScopeRef}
       className="w-full mx-auto min-h-screen flex-col gap-6 flex justify-center overflow-hidden "
     >
       <div>
@@ -49,9 +48,9 @@ export default function FeaturedArtices({ articles }) {
 
       <div className="">
         {viewMode === 'grid' ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          <div className=" grid  grid-cols-1 sm:grid-cols-2 gap-2">
             {articles.map((article, index) => (
-              <Fragment key={index}>
+              <span className=" overflow-hidden " key={index}>
                 <MdCard
                   title={article.title}
                   publishedAt={article.publishedAt}
@@ -60,41 +59,13 @@ export default function FeaturedArtices({ articles }) {
                   categories={article.categories}
                   slug={`/blog/${article.slug}`}
                 />
-              </Fragment>
+              </span>
             ))}
           </div>
         ) : (
-          <div className=" w-full relative mx-auto ">
-            <table className="text-left table mx-auto rtl:text-right table-auto  w-full mt-[4rem]">
-              <thead className=" bg-theme-muted rounded-md  text-theme-muted-inverted">
-                <tr className="font-basement ">
-                  <th scope="col" className="px-6 py-3">
-                    Title
-                  </th>
-                  <th scope="col" className="px-6 py-3">
-                    Categories
-                  </th>
-                  <th scope="col" className="px-6 py-3">
-                    Date
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {articles.map((article, index) => (
-                  <Fragment key={index}>
-                    <DtCard
-                      title={article.title}
-                      publishedAt={article.publishedAt}
-                      mainImage={article.mainImage.asset.url}
-                      slug={`/blog/${article.slug}`}
-                      alt={article.mainImage.alt}
-                      categories={article.categories}
-                    />
-                  </Fragment>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <>
+            <DtCard contents={articles} />
+          </>
         )}
       </div>
       <Link

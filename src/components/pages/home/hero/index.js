@@ -67,21 +67,11 @@ export default function Hero({ heading, roles, callToAction, phrase }) {
             })}
           </p>
           <div className=" gap-2 flex flex-col w-full justify-between">
-            <p className="">
-              <span className="sr-only">{cta}</span>
-              {cta.map((word, index) => {
-                return (
-                  <span key={index} className={' overflow-hidden inline-flex'}>
-                    <span className={'mr-1.5 desc normal-case text-theme-muted'}>{word}</span>
-                  </span>
-                );
-              })}
-            </p>
             <Link
               href="/contact"
               role="link"
               passHref
-              className=" items-center gap-5 place-self-end rounded-full hover:underline hover:text-theme-accent transition-colors duration-150 ease-linear underline-offset-4   "
+              className=" items-center gap-5 place-self-end rounded-full hover:underline hover:text-theme-muted-inverted transition-colors duration-150 ease-linear underline-offset-4   "
             >
               <span className="sr-only">Get in touch</span>
               <span className="inline-flex items-center gap-2 overflow-hidden">

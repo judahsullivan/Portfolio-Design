@@ -9,13 +9,14 @@ export default function OverView({}) {
   });
 
   const paragraph =
-    'Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat. Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat';
+    'The combination of my passion for pixel perfect design, clean code & user interaction gives me the skillset to set a new height in the web design world';
   const words = paragraph.split(' ');
   return (
     <div className="min-h-screen flex justify-center items-center w-full">
+      <h2></h2>
       <p
         ref={textRef}
-        className={'flex flex-wrap text-3xl md:text-5xl leading-1 p-5 text-theme-accent'}
+        className={'flex flex-wrap gap-1  text-3xl md:text-8xl leading-1 p-5 text-theme-accent'}
       >
         <span className="sr-only">{paragraph}</span>
         {words.map((word, i) => {

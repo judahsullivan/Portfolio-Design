@@ -17,7 +17,7 @@ heading,
       "projectTags": projectTags[]->{
         title
       },
-  'projectCategory': projectCategory->{
+  'categories': projectCategory->{
         title,
           description
         },

@@ -5,9 +5,52 @@ import { useEffect } from 'react';
 export default function ContentAnimations() {
   const [contentScope, animate] = useAnimate();
   const isInView = useInView(contentScope);
-  const { width, viewMode, toggleViewMode } = useResize();
+  const { viewMode, toggleViewMode } = useResize();
 
   useEffect(() => {
+    const description = document.getElementById('card-description');
+    const mDSequenence = [
+      [
+        '.line',
+        {
+          width: ['0%', '100%']
+        },
+        {
+          duration: 0.5
+        }
+      ],
+      [
+        '.title',
+        {
+          y: ['100%', '0%']
+        },
+        { duration: 0.8, delay: stagger(0.0765), ease: [0.22, 1, 0.36, 1] }
+      ],
+      [
+        '.container',
+        {
+          width: ['0%', '100%']
+        },
+        { duration: 0.8, delay: stagger(0.0765), ease: [0.22, 1, 0.36, 1] }
+      ],
+      [
+        '.card-line',
+        {
+          width: ['0%', '100%']
+        },
+        {
+          duration: 0.5
+        }
+      ],
+      [
+        '.card-description',
+        {
+          y: ['100%', '0%']
+        },
+        { duration: 0.8, delay: stagger(0.0765), ease: [0.22, 1, 0.36, 1] }
+      ]
+    ];
+
     const dTSequence = [
       [
         '.line',
@@ -25,16 +68,39 @@ export default function ContentAnimations() {
         },
         { duration: 0.8, delay: stagger(0.0765), ease: [0.22, 1, 0.36, 1] }
       ],
-      []
+      [
+        '.table-head',
+        {
+          height: ['0px'],
+          overflow: 'hidden'
+        },
+        { duration: 0.8, delay: stagger(0.0765), ease: [0.22, 1, 0.36, 1] }
+      ],
+      [
+        '.table-heading',
+        {
+          y: ['100%', '0%']
+        },
+        { duration: 0.8, delay: stagger(0.0165), ease: [0.22, 1, 0.36, 1] }
+      ],
+      [
+        '.table-description',
+        {
+          y: ['100%', '0%']
+        },
+
+        { duration: 0.8, delay: stagger(0.0165), ease: [0.22, 1, 0.36, 1] }
+      ]
     ];
 
     if (isInView) {
-      if (width && width <= 1008) {
+      if (viewMode === 'grid') {
+        animate(mDSequenence);
       } else {
         animate(dTSequence);
       }
     }
-  }, [isInView, animate, viewMode, width, toggleViewMode]);
+  }, [isInView, animate, viewMode, toggleViewMode]);
 
   return contentScope;
 }

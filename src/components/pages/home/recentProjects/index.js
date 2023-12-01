@@ -65,35 +65,7 @@ export default function RecentProjects({ projects }) {
           </div>
         ) : (
           <div className=" w-full relative  mx-auto ">
-            <table className="text-left  rtl:text-right table-auto  w-full mt-[4rem]">
-              <thead className=" bg-theme-muted rounded-md border text-theme-muted-inverted">
-                <tr className="font-basement">
-                  <th scope="col" className="px-6 py-3">
-                    Title
-                  </th>
-                  <th scope="col" className="px-6 py-3">
-                    Categories
-                  </th>
-                  <th scope="col" className="px-6 py-3">
-                    Date
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {projects.map((project, index) => (
-                  <Fragment key={index}>
-                    <DtCard
-                      title={project.title}
-                      publishedAt={project.publishedAt}
-                      mainImage={project.mainImage.asset.url}
-                      alt={project.mainImage.alt}
-                      categories={project.projectCategory} // Pass projectCategories to MdCard
-                      slug={`/projects/${project.slug}`}
-                    />
-                  </Fragment>
-                ))}
-              </tbody>
-            </table>
+            <DtCard contents={projects} />
           </div>
         )}
       </div>
