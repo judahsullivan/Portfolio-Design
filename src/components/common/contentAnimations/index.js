@@ -4,11 +4,10 @@ import { useEffect } from 'react';
 
 export default function ContentAnimations() {
   const [contentScope, animate] = useAnimate();
-  const isInView = useInView(contentScope);
+  const isInView = useInView(contentScope, { once: true, margin: '100px' });
   const { viewMode, toggleViewMode } = useResize();
 
   useEffect(() => {
-    const description = document.getElementById('card-description');
     const mDSequenence = [
       [
         '.line',
