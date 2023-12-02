@@ -46,6 +46,6 @@
 
   html,
   body {
-    @apply box-border font-thin text-theme-muted w-full min-h-[100dvh] p-0 m-0 bg-theme-base  overflow-x-hidden font-aileron;
+    @apply pointer-events-none box-border font-thin text-theme-muted w-full min-h-[100dvh] p-0 m-0 bg-theme-base  overflow-x-hidden font-aileron;
   }
 }
