@@ -7,16 +7,24 @@ import Link from 'next/link';
 export default function RecentProjects({ projects }) {
   const { viewMode } = useResize();
 
+  const description =
+    'A testament to innovation and design finesse. Each project encapsulates vision, precision, and the essence of digital transformation, shaping today and defining tomorrow.';
   function getProjectCount() {
     return projects.length;
   }
 
   return (
-    <section className="w-full mx-auto min-h-screen flex-col gap-10 flex justify-around overflow-hidden ">
-      <h2 className="font-basement text-theme-accent text-lg tracking-tight font-extrabold">
-        Recent Projects
-      </h2>
-      <div className="">
+    <section className="w-full items-center max-w-6xl mx-auto  justify-center min-h-screen flex-col gap-10 flex overflow-hidden ">
+      <div className="text-left w-full">
+        <div className="w-max">
+          <h2 className="text-2xl text-theme-base font-semibold font-aileron">
+            Discover my latest Creations
+          </h2>
+          <hr className="w-full border-theme-base" />
+        </div>
+        <p className="text-lg max-w-md leading-[1.3] pt-2">{description}</p>
+      </div>
+      <div className="w-full">
         {viewMode === 'grid' ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             {projects.map((project, index) => (
@@ -33,8 +41,11 @@ export default function RecentProjects({ projects }) {
             ))}
           </div>
         ) : (
-          <div className=" w-full relative  mx-auto ">
-            <table className="text-left  rtl:text-right table-auto  w-full mt-[4rem]">
+          <div className="flex flex-col justify-end align-end w-full">
+            <h3 className="font-basement text-theme-accent text-lg tracking-tight font-extrabold">
+              Recent Projects
+            </h3>
+            <table className=" text-left   rtl:text-right table-auto max-w-[1200px]">
               <thead className=" bg-theme-muted rounded-md border text-theme-muted-inverted">
                 <tr className="font-basement">
                   <th scope="col" className="px-6 py-3">

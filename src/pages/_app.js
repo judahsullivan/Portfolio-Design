@@ -3,6 +3,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { useRouter } from 'next/router';
 import '@/styles/globals.css';
 import { Fragment } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
@@ -15,8 +16,12 @@ export default function App({ Component, pageProps }) {
         </Fragment>
       ) : (
         <AppLayout>
-          <Component {...pageProps} />
-          <Analytics />
+          <AnimatePresence mode="wait" initial={true} onExitComplete={() => scrollTo(0, 0)}>
+            <motion.div key={router.asPath}>
+              <Component {...pageProps} />
+            </motion.div>
+            <Analytics />
+          </AnimatePresence>
         </AppLayout>
       )}
     </Fragment>

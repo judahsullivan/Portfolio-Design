@@ -13,20 +13,11 @@ export const homeData = {
   ],
   hero: {
     heading: 'Judah Sullivan',
-    roles: 'Full-Stack Enthusiast: Crafting Digital Experiences through Creativity',
-   phrase: 
-    'Enhancing brand presence through front-end expertise and leadership. Collaboratively shaping innovative digital experiences, setting a fresh standard.',
-   callToAction : [
-    'The combination of my passion for pixel ',
-    { text: 'perfect design', key: 'perfect' },
-    ', ',
-    { text: 'clean code', key: 'clean' },
-    ' & ',
-    { text: 'user interaction', key: 'interaction' },
-    ' gives me the skillset to set a new height in the ',
-    { text: 'web design world', key: 'web' },
-    '.'
-  ],
+    fullstack: 'Full-Stack',
+    enthusiast: ' Enthusiast',
+    phrase:
+      'Developing digital Expierences through frontend expertise, beautiful crafted designs and lasting impressions.',
+    location: 'New Orleans, LA'
   },
   overview: {
     heading: 'What Makes me Different',

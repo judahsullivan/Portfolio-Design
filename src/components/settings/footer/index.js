@@ -17,7 +17,7 @@ export default function Footer() {
   return (
     <motion.footer
       ref={container}
-      className=" w-full min-h-
+      className=" w-full min-h-screen
       bg-theme-muted flex flex-col relative justify-between  text-theme-base "
     ></motion.footer>
   );

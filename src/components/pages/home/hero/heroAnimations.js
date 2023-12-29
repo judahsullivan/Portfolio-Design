@@ -7,35 +7,35 @@ export default function HeroAnimations() {
   useEffect(() => {
     const sequence = [
       [
-        '.line',
+        '.heroline',
         {
           width: ['0%', '100%']
         },
         {
-          duration: 0.5
+          duration: 0.7,
+          ease: 'linear'
         }
-      ],
-      [
-        '.name',
-        { y: ['-100%', '0%'] },
-        { duration: 1, delay: stagger(0.1), ease: [0.22, 1, 0.36, 1] }
       ],
       [
         '.title',
         { y: ['100%', '0%'] },
-        { duration: 0.8, delay: stagger(0.0765), ease: [0.22, 1, 0.36, 1] }
+        { duration: 1, delay: stagger(0.0386), ease: [0.22, 1, 0.36, 1] }
       ],
       [
-        '.desc',
+        '.titletwo',
         { y: ['100%', '0%'] },
-        { duration: 0.8, delay: stagger(0.0765), ease: [0.22, 1, 0.36, 1] }
+        { duration: 1, at: '<', delay: stagger(0.0386), ease: [0.22, 1, 0.36, 1] }
       ],
-
-      ['.contact', { x: ['-100%', '0%'] }, { duration: 1, ease: [0.22, 1, 0.36, 1] }],
-      ['.arrow', { x: ['100%', '0%'] }, { duration: 1, ease: [0.22, 1, 0.36, 1] }]
+      [
+        '.herocontent',
+        { opacity: [0, 1], y: ['100%', '0%'] },
+        {
+          duration: 0.5
+        }
+      ]
     ];
 
-    animate(sequence, { delay: 0.5 });
+    animate(sequence);
   }, [animate]);
   return scope;
 }

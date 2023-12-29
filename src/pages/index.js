@@ -15,8 +15,8 @@ export default function Home({ homeData, featuredPost, recentProjects }) {
       url={''}
     >
       <Hero {...homeData.hero} />
-      <FeaturedArtices articles={featuredPost} />
       <RecentProjects projects={recentProjects} />
+      <FeaturedArtices articles={featuredPost} />
     </PageLayout>
   );
 }
