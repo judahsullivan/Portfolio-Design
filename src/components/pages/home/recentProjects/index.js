@@ -14,7 +14,7 @@ export default function RecentProjects({ projects }) {
   }
 
   return (
-    <section className="w-full items-center max-w-6xl mx-auto  justify-center min-h-screen flex-col gap-10 flex overflow-hidden ">
+    <section className="w-full items-center p-5 max-w-6xl mx-auto  justify-center min-h-screen flex-col gap-10 flex overflow-hidden ">
       <div className="text-left w-full">
         <div className="w-max">
           <h2 className="text-2xl text-theme-base font-semibold font-aileron">

@@ -13,18 +13,18 @@ export default function Hero({ location, heading, fullstack, enthusiast, phrase 
           <div className="w-full pl-2.5">
             <h1 className="text-left font-semibold ">{heading}</h1>
           </div>
-          <h2 className="text-5xl lg:text-[12dvw] font-basement uppercase   leading-0 text-theme-accent">
+          <h2 className="  text-[13dvw] font-basement uppercase lg:text-[12dvw] leading-none text-theme-accent">
             <span className="sr-only">{fullstack}</span>
             {fullstack.split('').map((heading, index) => (
-              <span className="inline-flex overflow-hidden" key={index}>
+              <span className=" inline-flex  overflow-hidden" key={index}>
                 <span className="title inline-flex ">{heading}</span>
               </span>
             ))}
           </h2>
-          <h2 className="text-5xl lg:text-[12dvw] font-basement uppercase text-theme-accent leading-0 ">
+          <h2 className=" lg:text-[12dvw] text-[13dvw] font-basement uppercase text-theme-accent leading-none ">
             <span className="sr-only">{enthusiast}</span>
             {enthusiast.split('').map((heading, index) => (
-              <span className="inline-flex overflow-hidden" key={index}>
+              <span className="  inline-flex overflow-hidden" key={index}>
                 <span className="titletwo inline-flex">{heading}</span>
               </span>
             ))}
